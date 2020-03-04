@@ -8,19 +8,7 @@ async function asyncForEach(array, callback) {
   }
 }
 
-const SITEMAP = [
-  { path: '/', priority: 0.5 },
-  { path: '/csgo-boost', priority: 0.5 },
-  { path: '/faceit-boost', priority: 0.5 },
-  { path: '/esea-boost', priority: 0.5 },
-  { path: '/buy-faceit-esea-account', priority: 0.5 },
-  { path: '/blog', priority: 0.5 },
-  { path: '/faq', priority: 0.5 },
-  { path: '/contacts', priority: 0.5 },
-  { path: '/terms-and-conditions', priority: 0.5 },
-  { path: (id) => `/buy/${id}`, priority: '1.0', dynamic: true, api: '/gds?skip=0&take=999' },
-  { path: (id) => `/blog/${id}`, priority: '1.0', dynamic: true, api: '/news?skip=0&take=999' },
-];
+const SITEMAP = [];
 
 console.log('Sitemap building started');
 

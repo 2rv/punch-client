@@ -1,0 +1,12 @@
+{
+  "DEFAULT": {
+    "TITLE": "Punch app",
+    "DESCRIPTION": "Punch app website",
+    "KEYWORDS": ""
+  },
+  "HOME": {
+    "TITLE": "Home page",
+    "DESCRIPTION": "Home page",
+    "KEYWORDS": ""
+  }
+}

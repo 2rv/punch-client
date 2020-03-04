@@ -1,0 +1,10 @@
+{
+  "PAGE": {
+    "TITLE": "Error 404",
+    "SUB_TITLE": "This page is not found. Or it was server error."
+  },
+
+  "SIGNATURE_IS_BAD": "Token signature is bad",
+  "GDS_NOT_FOUND": "Accounts not found",
+  "VALIDATION_REQUIRED": "This field is required"
+}

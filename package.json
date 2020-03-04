@@ -1,5 +1,5 @@
 {
-  "name": "eloboss-client",
+  "name": "client",
   "scripts": {
     "dev": "cross-env next",
     "heroku-prebuild": "npm run build && node build-sitemap",

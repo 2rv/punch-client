@@ -2,7 +2,6 @@
   "name": "client",
   "scripts": {
     "dev": "cross-env next",
-    "heroku-prebuild": "npm run build && node build-sitemap",
     "build-sitemap": "SITEMAP_API=http://localhost:4000 SITEMAP_URL=http://localhost:3000 node build-sitemap",
     "build": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT"

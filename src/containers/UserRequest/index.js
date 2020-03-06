@@ -5,12 +5,11 @@ import { reduxForm } from 'redux-form';
 import { compose } from 'redux';
 
 import { FORM_NAMES } from '../../constants';
-import { USER_REQUEST } from '../../constants/fields';
 import { isLoaded, getData, isLoading, isError } from '../../utils/store';
 
 import { validate } from '../../validations/userRequest';
 import { sendUserRequest } from '../../actions/userRequest';
-import Form from './Form';
+import FormComponent from './Form';
 
 class UserRequestContainer extends Component {
   send = () => {
@@ -35,7 +34,7 @@ class UserRequestContainer extends Component {
 
     return (
       <form onSubmit={handleSubmit((form) => this.send(form))}>
-        <Form
+        <FormComponent
           dataLoaded={isDataLoaded}
           loading={this.isFormLoading()}
           errorMessage={errorMessage}
@@ -65,6 +64,7 @@ UserRequestContainer.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   errorMessage: PropTypes.string,
   valid: PropTypes.bool,
+  data: PropTypes.object.isRequired,
   submitting: PropTypes.bool,
   isDataLoading: PropTypes.bool,
   isDataLoaded: PropTypes.bool,

@@ -37,25 +37,6 @@ const themeLanding = {
   }),
 };
 
-const themeUi = {
-  ...createMuiTheme({
-    palette: {
-      primary: {
-        main: '#5B25EC',
-        light: '#7b50ef',
-        dark: '#3f19a5',
-        contrastText: '#fff',
-      },
-      secondary: {
-        main: '#FF782D',
-        light: '#ff9357',
-        dark: '#b2541f',
-        contrastText: '#fff',
-      },
-    },
-  }),
-};
-
 class MyApp extends App {
   componentDidMount() {
     const jssStyles = document.querySelector('#jss-server-side');
@@ -63,14 +44,13 @@ class MyApp extends App {
   }
 
   // Fetching serialized(JSON) store state
-  static async getInitialProps(appContext) {
-    await routing(appContext);
+  static async getInitialProps({ Component, ctx }) {
+    await routing(ctx);
 
-    const { Component, ctx } = appContext;
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
-    const auth = getCookie(COOKIE_AUTH, ctx);
-    setAutorizationHeader(auth.token);
+    const auth = await getCookie(COOKIE_AUTH, ctx);
+    await setAutorizationHeader(auth.token);
 
     return { pageProps };
   }

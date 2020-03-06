@@ -15,8 +15,7 @@ import { sizes } from '../../theme';
 
 import Response from './Response';
 
-const Form = ({ disabled, data, loading, error, dataLoaded }) => {
-  console.log(data, loading);
+const FormComponent = ({ disabled, data, loading, error, dataLoaded }) => {
   return (
     <Fluid>
       <Container>
@@ -64,7 +63,7 @@ const Form = ({ disabled, data, loading, error, dataLoaded }) => {
   );
 };
 
-Form.propTypes = {
+FormComponent.propTypes = {
   error: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
@@ -98,6 +97,10 @@ const FieldSection = styled.div`
   margin-bottom: ${sizes.spacing(3)};
 `;
 
+const Block = styled(Box)`
+  padding: 20px 20px;
+`;
+
 const Container = styled(Responsive)`
   max-width: 600px;
   min-height: 100vh;
@@ -107,8 +110,4 @@ const Container = styled(Responsive)`
   padding: 50px 0;
 `;
 
-const Block = styled(Box)`
-  padding: 20px 20px;
-`;
-
-export default Form;
+export default FormComponent;

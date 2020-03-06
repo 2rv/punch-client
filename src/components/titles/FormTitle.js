@@ -6,20 +6,22 @@ import { sizes } from '../../theme';
 
 import { Text, Divider } from '../index';
 
-const Title = ({ className, tid }) => {
+const FormTitle = ({ className, tid }) => {
   return (
-    <TitleStyled className={className}>
-      <TextStyled tid={tid} />
+    <Container className={className}>
+      <Title>
+        <Text tid={tid} />
+      </Title>
       <Divider />
-    </TitleStyled>
+    </Container>
   );
 };
 
-const TextStyled = styled(Text)`
+const Title = styled.span`
   margin-bottom: ${sizes.spacing(1)};
 `;
 
-const TitleStyled = styled.strong`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: 400;
@@ -28,9 +30,9 @@ const TitleStyled = styled.strong`
   margin-bottom: ${sizes.spacing(4)};
 `;
 
-Title.propTypes = {
+FormTitle.propTypes = {
   className: PropTypes.string,
   tid: PropTypes.string,
 };
 
-export default Title;
+export default FormTitle;

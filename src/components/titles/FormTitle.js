@@ -2,24 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { sizes } from '../theme';
+import { sizes } from '../../theme';
 
-import Text from './Text';
+import { Text, Divider } from '../index';
 
 const Title = ({ className, tid }) => {
   return (
     <TitleStyled className={className}>
-      <Text tid={tid} />
+      <TextStyled tid={tid} />
+      <Divider />
     </TitleStyled>
   );
 };
 
+const TextStyled = styled(Text)`
+  margin-bottom: ${sizes.spacing(1)};
+`;
+
 const TitleStyled = styled.strong`
-  display: block;
+  display: flex;
+  flex-direction: column;
   font-weight: 400;
-  font-size: 24px;
+  font-size: ${sizes.spacing(6)};
   color: #fff;
-  margin-bottom: ${sizes.spacing.lg};
+  margin-bottom: ${sizes.spacing(4)};
 `;
 
 Title.propTypes = {

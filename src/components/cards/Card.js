@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Paper from '@material-ui/core/Paper';
 
-import { colors } from '../theme';
+import { colors } from '../../theme';
 
 const Card = ({ className, children }) => {
   return <PaperStyled className={className}>{children}</PaperStyled>;

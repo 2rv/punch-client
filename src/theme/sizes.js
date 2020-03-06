@@ -1,5 +1,5 @@
 export default {
-  spacing: (n) => n * 4,
+  spacing: (n, type = 'px') => n * 4 + type,
   transition: {
     md: '0.7s',
   },

@@ -1,0 +1,16 @@
+{
+  "FORM": {
+    "TITLE": "User request",
+    "ID": "Id",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "SUBMIT": "Send request"
+  },
+  "DATA": {
+    "ID": "ID",
+    "NAME": "Name",
+    "ADDRESS": "Location address",
+    "PHONE": "Phone"
+  }
+}

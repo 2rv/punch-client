@@ -36,6 +36,10 @@ const EMAIL_EXP = /^(([^<>()[\]\\.,;:\s@"']+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 export const email = (value) => (!EMAIL_EXP.test(value) ? getError('VALIDATION.EMAIL') : null);
 
 // eslint-disable-next-line max-len
+const PHONE_EXP = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+export const phone = (value) => (!PHONE_EXP.test(value) ? getError('VALIDATION.PHONE') : null);
+
+// eslint-disable-next-line max-len
 const NAME_EXP = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
 export const name = (value) => (!NAME_EXP.test(value) ? getError('VALIDATION.NAME') : null);
 
@@ -99,6 +103,14 @@ export const validator = (values, config = {}) => {
   });
 
   return errors;
+};
+
+export const notRequired = (validation) => (value, ...props) => {
+  if (!value) {
+    return null;
+  }
+
+  return validation(value, ...props);
 };
 
 // eslint-disable-next-line max-len

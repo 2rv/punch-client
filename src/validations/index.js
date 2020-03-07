@@ -88,6 +88,21 @@ export const requiredArray = (value = []) => {
   return null;
 };
 
+export const requiredObjectArray = (value = []) => {
+  if (value.length === 0) {
+    return getError(REQUIRED_TEXT_TID);
+  }
+
+  for (let i = 0; i < value.length; i++) {
+    const itemArr = Object.keys(value[i]);
+
+    if (itemArr.length === 0) {
+      return getError(REQUIRED_TEXT_TID);
+    }
+  }
+  return null;
+};
+
 export const validator = (values, config = {}) => {
   const errors = {};
 

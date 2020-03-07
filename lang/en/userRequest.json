@@ -9,6 +9,7 @@
 
     "SELECT_FIELDS": "Select fields",
     "EMPTY": "Form is empty. Select fields for request",
+    "ADD_BLOCK": "Add field block",
 
     "SWITCHER": {
       "PREFIX": "И",

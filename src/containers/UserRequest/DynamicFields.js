@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Field as ReduxField } from 'redux-form';
+import PropTypes from 'prop-types';
 
 import { Text, Divider } from '../../components';
-import { TextField, SelectField, Switcher } from '../../components/fields';
+import { TextField, SelectField } from '../../components/fields';
 
 import { USER_REQUEST } from '../../constants/fields';
 import { REQUEST_DATA_TYPE } from '../../constants/static';
 import { sizes } from '../../theme';
+
+import { fieldsValidation } from '../../validations/userRequest';
 
 const SELECT_DATA = [
   {
@@ -32,23 +35,13 @@ const SELECT_DATA = [
   },
 ];
 
-const DynamicFields = () => {
-  const [fieldList, setFieldList] = React.useState([]);
-  const [switchList, setSwitchList] = React.useState({});
-
+const DynamicFields = ({ name, fieldList = [], setFieldList }) => {
   const handleChangeFields = (event) => {
     setFieldList(event.target.value);
   };
 
-  const handleChangeSwitcher = (e, value, type) => {
-    setSwitchList({
-      ...switchList,
-      [type]: value,
-    });
-  };
-
   const isFieldListEmpty = () => {
-    return fieldList.length === 0;
+    return !fieldList || fieldList.length === 0;
   };
 
   return (
@@ -60,14 +53,10 @@ const DynamicFields = () => {
           fieldList.map((type, id) => (
             <FieldBlock key={id}>
               <ReduxField
-                name={USER_REQUEST[type]}
+                name={`${name}.${USER_REQUEST[type]}`}
                 component={TextField}
+                validate={fieldsValidation[USER_REQUEST[type]]}
                 label={<Text tid={`USER_REQUEST.FORM.${type}`} />}
-              />
-              <Switcher
-                onChange={(e, v) => handleChangeSwitcher(e, v, type)}
-                prefix="USER_REQUEST.FORM.SWITCHER.PREFIX"
-                label="USER_REQUEST.FORM.SWITCHER.SUFIX"
               />
             </FieldBlock>
           ))
@@ -88,7 +77,9 @@ const DynamicFields = () => {
   );
 };
 
-DynamicFields.propTypes = {};
+DynamicFields.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 const FieldSection = styled.div`
   margin-bottom: ${sizes.spacing(3)};
@@ -99,15 +90,6 @@ const SelectSection = styled.div`
 `;
 
 const FieldBlock = styled.div`
-  display: grid;
-  grid-column-gap: ${sizes.spacing(2)};
-  grid-row-gap: ${sizes.spacing(1)};
-
-  @media all and (min-width: 480px) {
-    grid-template-columns: 4fr 1fr;
-    grid-template-areas: '. .';
-  }
-
   &:not(:last-of-type) {
     margin-bottom: ${sizes.spacing(3)};
   }
@@ -119,4 +101,4 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-export default DynamicFields;
+export default React.memo(DynamicFields, () => true);

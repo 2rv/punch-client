@@ -22,12 +22,6 @@ const themeLanding = {
     palette: {
       type: 'dark',
       primary: {
-        main: '#5B25EC',
-        light: '#7b50ef',
-        dark: '#3f19a5',
-        contrastText: '#fff',
-      },
-      secondary: {
         main: '#FF782D',
         light: '#ff9357',
         dark: '#b2541f',

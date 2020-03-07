@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Field as ReduxField } from 'redux-form';
 
 import { Fluid, Responsive, Padding } from '../../components/layouts';
 import { Box } from '../../components/cards';
 import { FormTitle } from '../../components/titles';
-import { Text, Loader, Alert, Divider } from '../../components';
-import { TextField } from '../../components/fields';
+import { Text, Loader, Alert } from '../../components';
 import { OutlinedButton } from '../../components/buttons';
 
-import { USER_REQUEST } from '../../constants/fields';
 import { sizes } from '../../theme';
 
-import Response from './Response';
 import DynamicFields from './DynamicFields';
 
-const FormComponent = ({ disabled, data, loading, error, dataLoaded }) => {
+const FormComponent = ({ disabled, loading, error }) => {
   return (
     <Fluid>
       <Container>
@@ -31,14 +27,6 @@ const FormComponent = ({ disabled, data, loading, error, dataLoaded }) => {
             <ButtonSubmit disabled={disabled} type="submit">
               <Text tid="USER_REQUEST.FORM.SUBMIT" />
             </ButtonSubmit>
-            {dataLoaded && (
-              <FooterBlock>
-                <Divider />
-                <DataBlock>
-                  <Response data={data} />
-                </DataBlock>
-              </FooterBlock>
-            )}
           </Block>
         </Padding>
       </Container>
@@ -50,17 +38,7 @@ FormComponent.propTypes = {
   error: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
-  dataLoaded: PropTypes.bool,
-  data: PropTypes.object,
 };
-
-const FooterBlock = styled.div`
-  margin-top: ${sizes.spacing(4)};
-`;
-
-const DataBlock = styled.div`
-  margin-top: ${sizes.spacing(3)};
-`;
 
 const ButtonSubmit = styled(OutlinedButton)`
   width: 100%;
@@ -75,7 +53,7 @@ const FieldSection = styled.div`
 `;
 
 const Block = styled(Box)`
-  padding: 20px 20px;
+  padding: ${sizes.spacing(5)};
 `;
 
 const Container = styled(Responsive)`

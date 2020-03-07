@@ -1,4 +1,6 @@
 import userData from '../mocks/userData';
+import { redirect } from '../utils/navigation';
+import ROUTES from '../constants/routes';
 
 import { USER_REQUEST } from '.';
 
@@ -18,7 +20,8 @@ const setLoading = () => ({
 
 export const sendUserRequest = () => (dispatch) => {
   dispatch(setLoading());
-  return setTimeout(() => {
-    return dispatch(setSuccessData(userData));
+  setTimeout(() => {
+    dispatch(setSuccessData(userData));
+    redirect(ROUTES.RESPONSE);
   }, 3000);
 };

@@ -57,5 +57,6 @@ module.exports = {
 
     'prettier/prettier': 'off',
     'import/prefer-default-export': 'off',
+    'react/no-array-index-key': 'off',
   },
 };

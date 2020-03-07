@@ -1,5 +1,6 @@
 const ROUTES = {
   HOME: '/',
+  RESPONSE: '/response',
 };
 
 export default ROUTES;

@@ -4,6 +4,7 @@ import error from './error.json';
 import navigation from './navigation.json';
 import staticData from './static.json';
 import userRequest from './userRequest.json';
+import userResponse from './userResponse.json';
 
 export default {
   translation: {
@@ -13,5 +14,6 @@ export default {
     NAVIGATION: navigation,
     STATIC: staticData,
     USER_REQUEST: userRequest,
+    USER_RESPONSE: userResponse,
   },
 };

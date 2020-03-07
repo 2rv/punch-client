@@ -14,6 +14,12 @@
     "SWITCHER": {
       "PREFIX": "И",
       "SUFIX": "ИЛИ"
+    },
+
+    "ACTION": {
+      "COPY": "Copy fields block",
+      "CLEAR": "Clear data fields block",
+      "DELETE": "Delete fields block"
     }
   },
   "DATA": {

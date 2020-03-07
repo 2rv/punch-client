@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import TooltipMaterial from '@material-ui/core/Tooltip';
 
-const Tooltip = ({ tid, children, arrow, disableFocusListener, disableTouchListener, placement = 'top' }) => {
+const Tooltip = ({
+  tid,
+  children,
+  arrow = true,
+  disableFocusListener = true,
+  disableTouchListener = true,
+  placement = 'bottom',
+}) => {
   const { t } = useTranslation();
 
   return (

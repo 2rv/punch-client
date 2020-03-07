@@ -2,20 +2,34 @@ import React from 'react';
 import styled from 'styled-components';
 
 import IconButton from '@material-ui/core/IconButton';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import DeleteIcon from '@material-ui/icons/Delete';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
 
-import { Divider } from '../../components';
+import { Divider, Tooltip } from '../../components';
 import { sizes } from '../../theme';
 
 import DynamicFields from './DynamicFields';
 
-const FieldBlock = ({ index, name, removeAction, fieldList, setFieldList }) => {
+const FieldBlock = ({ index, name, removeAction, clearAction, fieldList, setFieldList, copyAction }) => {
   return (
     <Block>
       <Header>
-        <IconButton onClick={removeAction} size="small">
-          <DeleteIcon fontSize="small" />
-        </IconButton>
+        <Tooltip tid="USER_REQUEST.FORM.ACTION.COPY">
+          <ActionButton onClick={copyAction} size="small">
+            <FileCopyIcon />
+          </ActionButton>
+        </Tooltip>
+        <Tooltip tid="USER_REQUEST.FORM.ACTION.CLEAR">
+          <ActionButton onClick={clearAction} size="small">
+            <DeleteOutlineIcon />
+          </ActionButton>
+        </Tooltip>
+        <Tooltip tid="USER_REQUEST.FORM.ACTION.DELETE">
+          <ActionButton onClick={removeAction} size="small">
+            <DeleteIcon />
+          </ActionButton>
+        </Tooltip>
       </Header>
       <Divider />
       <BlockContnet>
@@ -26,6 +40,12 @@ const FieldBlock = ({ index, name, removeAction, fieldList, setFieldList }) => {
 };
 
 FieldBlock.propTypes = {};
+
+const ActionButton = styled(IconButton)`
+  &:not(:last-of-type) {
+    margin-right: ${sizes.spacing(1)};
+  }
+`;
 
 const Header = styled.div`
   margin-bottom: ${sizes.spacing(1)};

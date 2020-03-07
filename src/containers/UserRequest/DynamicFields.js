@@ -79,6 +79,8 @@ const DynamicFields = ({ name, fieldList = [], setFieldList }) => {
 
 DynamicFields.propTypes = {
   name: PropTypes.string.isRequired,
+  fieldList: PropTypes.array.isRequired,
+  setFieldList: PropTypes.func.isRequired,
 };
 
 const FieldSection = styled.div`

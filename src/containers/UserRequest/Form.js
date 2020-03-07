@@ -12,7 +12,7 @@ import { sizes } from '../../theme';
 
 import FieldsBlocks from './FieldsBlocks';
 
-const FormComponent = ({ disabled, loading, error }) => {
+const FormComponent = ({ disabled, loading, error, formName }) => {
   return (
     <Fluid>
       <Container>
@@ -22,7 +22,7 @@ const FormComponent = ({ disabled, loading, error }) => {
             <FormTitle bordered tid="USER_REQUEST.FORM.TITLE" />
             {error && <AlertError tid={`ERROR.${error}`} />}
             <FieldSection>
-              <FieldsBlocks />
+              <FieldsBlocks formName={formName} />
             </FieldSection>
             <Divider />
             <ButtonSubmit disabled={disabled} type="submit">
@@ -37,6 +37,7 @@ const FormComponent = ({ disabled, loading, error }) => {
 
 FormComponent.propTypes = {
   error: PropTypes.string,
+  formName: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
 };

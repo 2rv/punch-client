@@ -1,22 +1,52 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FieldArray } from 'redux-form';
+import { FieldArray, change as reduxFieldChange } from 'redux-form';
 
 import { Text } from '../../components';
 import { OutlinedButton } from '../../components/buttons';
-import { USER_REQUEST_LIST } from '../../constants/fields';
+import { USER_REQUEST_LIST, USER_REQUEST } from '../../constants/fields';
 import { sizes } from '../../theme';
 
 import FieldBlock from './FieldBlock';
 
 import { fieldListValidation } from '../../validations/userRequest';
 
-const FieldsBlocks = () => {
+const FieldsBlocks = ({ formName }) => {
   const [fieldList, setFieldList] = React.useState({});
 
   const handleSetFieldList = (value, index) => {
     setFieldList({ ...fieldList, [index]: value });
   };
+
+  const handleRemoveBlock = (fields, index) => {
+    fields.remove(index);
+
+    const fieldListNew = { ...fieldList };
+    delete fieldListNew[index];
+    setFieldList(fieldListNew);
+  };
+
+  const handleClearBlock = (index, fields) => {
+    const fieldsTypes = fieldList[index];
+
+    if (fieldsTypes) {
+      fields.remove(index);
+      fields.insert(index, {});
+    }
+  };
+
+  const handleCopyBlock = (index, fields) => {
+    const fieldsTypes = fieldList[index];
+
+    if (fieldsTypes) {
+      fields.push(fields.get(index));
+
+      const lastIndex = Object.keys(fieldList).length;
+      setFieldList({ ...fieldList, [lastIndex]: fieldsTypes });
+    }
+  };
+
+  console.log(fieldList);
 
   return (
     <Container>
@@ -31,7 +61,9 @@ const FieldsBlocks = () => {
                   <FieldBlock
                     setFieldList={handleSetFieldList}
                     fieldList={fieldList}
-                    removeAction={() => fields.remove(index)}
+                    clearAction={() => handleClearBlock(index, fields)}
+                    copyAction={() => handleCopyBlock(index, fields)}
+                    removeAction={() => handleRemoveBlock(fields, index, field)}
                     index={index}
                     name={field}
                   />

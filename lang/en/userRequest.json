@@ -5,7 +5,15 @@
     "NAME": "Name",
     "EMAIL": "Email",
     "PHONE": "Phone",
-    "SUBMIT": "Send request"
+    "SUBMIT": "Send request",
+
+    "SELECT_FIELDS": "Select fields",
+    "EMPTY": "Form is empty. Select fields for request",
+
+    "SWITCHER": {
+      "PREFIX": "И",
+      "SUFIX": "ИЛИ"
+    }
   },
   "DATA": {
     "ID": "ID",

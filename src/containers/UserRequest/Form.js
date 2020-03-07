@@ -14,6 +14,7 @@ import { USER_REQUEST } from '../../constants/fields';
 import { sizes } from '../../theme';
 
 import Response from './Response';
+import DynamicFields from './DynamicFields';
 
 const FormComponent = ({ disabled, data, loading, error, dataLoaded }) => {
   return (
@@ -25,25 +26,7 @@ const FormComponent = ({ disabled, data, loading, error, dataLoaded }) => {
             <FormTitle bordered tid="USER_REQUEST.FORM.TITLE" />
             {error && <AlertError tid={`ERROR.${error}`} />}
             <FieldSection>
-              <FieldBlock name={USER_REQUEST.ID} component={TextField} label={<Text tid="USER_REQUEST.FORM.ID" />} />
-              <FieldBlock
-                name={USER_REQUEST.NAME}
-                component={TextField}
-                type="name"
-                label={<Text tid="USER_REQUEST.FORM.NAME" />}
-              />
-              <FieldBlock
-                name={USER_REQUEST.EMAIL}
-                component={TextField}
-                type="email"
-                label={<Text tid="USER_REQUEST.FORM.EMAIL" />}
-              />
-              <FieldBlock
-                name={USER_REQUEST.PHONE}
-                component={TextField}
-                type="phone"
-                label={<Text tid="USER_REQUEST.FORM.PHONE" />}
-              />
+              <DynamicFields />
             </FieldSection>
             <ButtonSubmit disabled={disabled} type="submit">
               <Text tid="USER_REQUEST.FORM.SUBMIT" />
@@ -87,12 +70,6 @@ const AlertError = styled(Alert)`
   margin-bottom: ${sizes.spacing(3)};
 `;
 
-const FieldBlock = styled(ReduxField)`
-  &:not(:last-of-type) {
-    margin-bottom: ${sizes.spacing(3)};
-  }
-`;
-
 const FieldSection = styled.div`
   margin-bottom: ${sizes.spacing(3)};
 `;
@@ -102,7 +79,7 @@ const Block = styled(Box)`
 `;
 
 const Container = styled(Responsive)`
-  max-width: 600px;
+  max-width: 700px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

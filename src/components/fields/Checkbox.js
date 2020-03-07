@@ -8,7 +8,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 import { sizes } from '../../theme';
 
-const SecondaryCheckbox = ({ checked, onChange, value, tid, ...props }) => {
+const SecondaryCheckbox = ({ checked, onChange, value = true, tid, ...props }) => {
   const { t } = useTranslation();
 
   return (

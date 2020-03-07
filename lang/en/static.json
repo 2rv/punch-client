@@ -1,1 +1,8 @@
-{}
+{
+  "REQUEST_DATA_TYPE": {
+    "ID": "Id",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "NAME": "Name"
+  }
+}

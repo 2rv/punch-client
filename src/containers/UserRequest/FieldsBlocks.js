@@ -30,8 +30,10 @@ const FieldsBlocks = () => {
     const fieldsTypes = fieldList[index];
 
     if (fieldsTypes) {
-      fields.remove(index);
-      fields.insert(index, {});
+      const newIndex = fields.length;
+      fields.push({});
+      fields.swap(index, newIndex);
+      fields.pop();
     }
   };
 

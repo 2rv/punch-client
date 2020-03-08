@@ -28,12 +28,11 @@ const FieldsBlocks = () => {
 
   const handleClearBlock = (index, fields) => {
     const fieldsTypes = fieldList[index];
+    const dataArr = Object.keys(fields.get(index));
 
-    if (fieldsTypes) {
-      const newIndex = fields.length;
-      fields.push({});
-      fields.swap(index, newIndex);
-      fields.pop();
+    if (fieldsTypes && dataArr.length !== 0) {
+      fields.remove(index);
+      fields.insert(index, {});
     }
   };
 

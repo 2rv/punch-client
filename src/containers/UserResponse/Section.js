@@ -14,7 +14,7 @@ const Section = ({ data }) => {
       {id && (
         <Item>
           <Title>
-            <Text tid="USER_REQUEST.DATA.ID" />:
+            <Text tid="USER_RESPONSE.DATA.ID" />:
           </Title>
           <span>{id}</span>
         </Item>
@@ -23,7 +23,7 @@ const Section = ({ data }) => {
       {name && (
         <Item>
           <Title>
-            <Text tid="USER_REQUEST.DATA.NAME" />:
+            <Text tid="USER_RESPONSE.DATA.NAME" />:
           </Title>
           <span>{name}</span>
         </Item>
@@ -32,7 +32,7 @@ const Section = ({ data }) => {
       {address && (
         <Item>
           <Title>
-            <Text tid="USER_REQUEST.DATA.ADDRESS" />:
+            <Text tid="USER_RESPONSE.DATA.ADDRESS" />:
           </Title>
           <span>{address}</span>
         </Item>
@@ -41,7 +41,7 @@ const Section = ({ data }) => {
       {phone && (
         <Item>
           <Title>
-            <Text tid="USER_REQUEST.DATA.PHONE" />:
+            <Text tid="USER_RESPONSE.DATA.PHONE" />:
           </Title>
           <span>{phone}</span>
         </Item>
@@ -55,7 +55,6 @@ Section.propTypes = {
 };
 
 const Title = styled.span`
-  font-weight: bold;
   margin-right: ${sizes.spacing(2)};
 `;
 

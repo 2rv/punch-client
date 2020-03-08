@@ -4,5 +4,11 @@
   },
   "RESPONSE": {
     "TITLE": "Response data"
+  },
+  "DATA": {
+    "ID": "ID",
+    "NAME": "Name",
+    "ADDRESS": "Location address",
+    "PHONE": "Phone number"
   }
 }

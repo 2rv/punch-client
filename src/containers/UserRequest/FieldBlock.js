@@ -15,9 +15,18 @@ import { USER_REQUEST } from '../../constants/fields';
 
 import DynamicFields from './DynamicFields';
 
-const FieldBlock = ({ fieldsValue, index, name, removeAction, clearAction, fieldList, setFieldList, copyAction }) => {
-  const [open, setOpen] = React.useState(true);
-
+const FieldBlock = ({
+  openStatus = true,
+  setOpenStatus,
+  fieldsValue,
+  index,
+  name,
+  removeAction,
+  clearAction,
+  fieldList,
+  setFieldList,
+  copyAction,
+}) => {
   const generateFieldListDescription = (fields) => {
     if (!fields || fields.length === 0) {
       return <Text tid="USER_REQUEST.BLOCK_TITLE.EMPTY" />;
@@ -37,11 +46,11 @@ const FieldBlock = ({ fieldsValue, index, name, removeAction, clearAction, field
 
   return (
     <Block>
-      {open ? (
+      {openStatus ? (
         <React.Fragment>
           <Header>
             <Tooltip tid="USER_REQUEST.FORM.ACTION.CLOSE">
-              <ActionButton onClick={() => setOpen(false)} size="small">
+              <ActionButton onClick={() => setOpenStatus(false)} size="small">
                 <ExpandMoreIcon />
               </ActionButton>
             </Tooltip>
@@ -77,7 +86,7 @@ const FieldBlock = ({ fieldsValue, index, name, removeAction, clearAction, field
         <React.Fragment>
           <Header>
             <Tooltip tid="USER_REQUEST.FORM.ACTION.OPEN">
-              <ActionButton onClick={() => setOpen(true)} size="small">
+              <ActionButton onClick={() => setOpenStatus(true)} size="small">
                 <ExpandLessIcon />
               </ActionButton>
             </Tooltip>
@@ -99,6 +108,8 @@ FieldBlock.propTypes = {
   fieldsValue: PropTypes.object.isRequired,
   setFieldList: PropTypes.func.isRequired,
   copyAction: PropTypes.func.isRequired,
+  setOpenStatus: PropTypes.func.isRequired,
+  openStatus: PropTypes.bool,
 };
 
 const TitleField = styled.span`

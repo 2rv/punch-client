@@ -13,6 +13,11 @@ import { fieldListValidation } from '../../validations/userRequest';
 
 const FieldsBlocks = () => {
   const [fieldList, setFieldList] = React.useState({});
+  const [openStatusList, setOpenStatus] = React.useState({});
+
+  const handleSetOpenStatus = (status, index) => {
+    setOpenStatus({ ...openStatusList, [index]: status });
+  };
 
   const handleSetFieldList = (value, index) => {
     setFieldList({ ...fieldList, [index]: value });
@@ -56,10 +61,12 @@ const FieldsBlocks = () => {
           <Content>
             {fields.map((field, index) => {
               return (
-                <React.Fragment key={index}>
+                <React.Fragment key={`field-group-${index}`}>
                   <FieldBlock
                     setFieldList={handleSetFieldList}
                     fieldList={fieldList}
+                    openStatus={openStatusList[index]}
+                    setOpenStatus={(value) => handleSetOpenStatus(value, index)}
                     clearAction={() => handleClearBlock(index, fields)}
                     copyAction={() => handleCopyBlock(index, fields)}
                     removeAction={() => handleRemoveBlock(fields, index, field)}

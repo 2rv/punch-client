@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
 
 import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
@@ -12,19 +11,28 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import { Divider, Tooltip, Text } from '../../components';
 import { sizes } from '../../theme';
+import { USER_REQUEST } from '../../constants/fields';
 
 import DynamicFields from './DynamicFields';
 
-const FieldBlock = ({ index, name, removeAction, clearAction, fieldList, setFieldList, copyAction }) => {
+const FieldBlock = ({ fieldsValue, index, name, removeAction, clearAction, fieldList, setFieldList, copyAction }) => {
   const [open, setOpen] = React.useState(true);
-  const { t } = useTranslation();
 
   const generateFieldListDescription = (fields) => {
     if (!fields || fields.length === 0) {
       return <Text tid="USER_REQUEST.BLOCK_TITLE.EMPTY" />;
     }
 
-    return fields.map((value) => t(`USER_REQUEST.DATA.${value}`)).join(', ');
+    return fields.map((value) => (
+      <Tooltip
+        tvalues={{ value: fieldsValue[USER_REQUEST[value]] || 'empty' }}
+        tid="USER_REQUEST.BLOCK_TITLE.DATA_VALUE"
+      >
+        <TitleField>
+          <Text tid={`STATIC.REQUEST_DATA_TYPE.${value}`} />
+        </TitleField>
+      </Tooltip>
+    ));
   };
 
   return (
@@ -88,11 +96,21 @@ FieldBlock.propTypes = {
   removeAction: PropTypes.func.isRequired,
   clearAction: PropTypes.func.isRequired,
   fieldList: PropTypes.array.isRequired,
+  fieldsValue: PropTypes.object.isRequired,
   setFieldList: PropTypes.func.isRequired,
   copyAction: PropTypes.func.isRequired,
 };
 
-const TitleBlock = styled.div``;
+const TitleField = styled.span`
+  &:not(:last-of-type) {
+    margin-right: ${sizes.spacing(1)};
+  }
+`;
+
+const TitleBlock = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const ActionsBlock = styled.div``;
 

@@ -10,6 +10,7 @@ const Tooltip = ({
   disableFocusListener = true,
   disableTouchListener = true,
   placement = 'bottom',
+  tvalues,
 }) => {
   const { t } = useTranslation();
 
@@ -17,7 +18,7 @@ const Tooltip = ({
     <TooltipMaterial
       disableFocusListener={disableFocusListener}
       disableTouchListener={disableTouchListener}
-      title={t(tid)}
+      title={t(tid, tvalues)}
       arrow={arrow}
       placement={placement}
     >
@@ -29,6 +30,7 @@ const Tooltip = ({
 Tooltip.propTypes = {
   tid: PropTypes.string.isRequired,
   placement: PropTypes.string,
+  tvalues: PropTypes.object,
   children: PropTypes.node.isRequired,
   arrow: PropTypes.bool,
   disableFocusListener: PropTypes.bool,

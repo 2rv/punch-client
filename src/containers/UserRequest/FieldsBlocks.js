@@ -63,6 +63,7 @@ const FieldsBlocks = () => {
                     clearAction={() => handleClearBlock(index, fields)}
                     copyAction={() => handleCopyBlock(index, fields)}
                     removeAction={() => handleRemoveBlock(fields, index, field)}
+                    fieldsValue={fields.get(index)}
                     index={index}
                     name={field}
                   />

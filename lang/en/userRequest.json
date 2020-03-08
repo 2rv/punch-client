@@ -24,14 +24,9 @@
       "OPEN": "Expand fields block"
     }
   },
-  "DATA": {
-    "ID": "ID",
-    "NAME": "Name",
-    "ADDRESS": "Location address",
-    "PHONE": "Phone"
-  },
 
   "BLOCK_TITLE": {
-    "EMPTY": "Fields block is empty"
+    "EMPTY": "Fields block is empty",
+    "DATA_VALUE": "= {{value}}"
   }
 }

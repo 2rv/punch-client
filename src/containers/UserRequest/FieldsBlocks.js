@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FieldArray, change as reduxFieldChange } from 'redux-form';
+import { FieldArray } from 'redux-form';
 
 import { Text } from '../../components';
 import { OutlinedButton } from '../../components/buttons';
-import { USER_REQUEST_LIST, USER_REQUEST } from '../../constants/fields';
+import { USER_REQUEST_LIST } from '../../constants/fields';
 import { sizes } from '../../theme';
 
 import FieldBlock from './FieldBlock';
 
 import { fieldListValidation } from '../../validations/userRequest';
 
-const FieldsBlocks = ({ formName }) => {
+const FieldsBlocks = () => {
   const [fieldList, setFieldList] = React.useState({});
 
   const handleSetFieldList = (value, index) => {
@@ -45,8 +45,6 @@ const FieldsBlocks = ({ formName }) => {
       setFieldList({ ...fieldList, [lastIndex]: fieldsTypes });
     }
   };
-
-  console.log(fieldList);
 
   return (
     <Container>

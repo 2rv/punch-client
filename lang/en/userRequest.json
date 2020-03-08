@@ -19,7 +19,9 @@
     "ACTION": {
       "COPY": "Copy fields block",
       "CLEAR": "Clear data fields block",
-      "DELETE": "Delete fields block"
+      "DELETE": "Delete fields block",
+      "CLOSE": "Roll up fields block",
+      "OPEN": "Expand fields block"
     }
   },
   "DATA": {
@@ -27,5 +29,9 @@
     "NAME": "Name",
     "ADDRESS": "Location address",
     "PHONE": "Phone"
+  },
+
+  "BLOCK_TITLE": {
+    "EMPTY": "Fields block is empty"
   }
 }

@@ -103,7 +103,7 @@ FieldBlock.propTypes = {
 
 const TitleField = styled.span`
   &:not(:last-of-type) {
-    margin-right: ${sizes.spacing(1)};
+    margin-right: ${sizes.spacing(2)};
   }
 `;
 

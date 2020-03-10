@@ -8,8 +8,6 @@ export default (ctx) => {
   const auth = getCookie(COOKIE_AUTH, ctx);
   const { res } = ctx;
 
-  console.log(auth);
-
   if (auth === null || auth.isLoggedIn !== true) {
     if (res) {
       res.writeHead(302, {

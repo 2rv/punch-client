@@ -2,10 +2,11 @@ import ROUTES from '../constants/routes';
 
 import initRouter from './router';
 
-import { response } from './redirects';
+import { response, privated } from './redirects';
 
 const routeSwitch = initRouter({
-  [ROUTES.RESPONSE]: response,
+  [ROUTES.DASHBOARD]: response,
+  [ROUTES.RESPONSE]: privated,
 });
 
 export default async (ctx) => {

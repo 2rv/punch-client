@@ -29,7 +29,6 @@ GlobalMessage.propTypes = {
 };
 
 const SubTitle = styled.span`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
@@ -37,14 +36,12 @@ const SubTitle = styled.span`
 `;
 
 const Title = styled.span`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
 `;
 
 const Container = styled(Padding)`
-  background-color: ${colors.primary};
   width: 100%;
   min-height: 100vh;
   display: flex;

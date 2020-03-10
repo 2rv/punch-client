@@ -7,3 +7,8 @@ export const USER_REQUEST = {
   FAIL: 'USER_REQUEST.FAIL',
   LOADING: 'USER_REQUEST.LOADING',
 };
+
+export const LOGIN = {
+  SUCCESS: 'LOGIN.SUCCESS',
+  FAIL: 'LOGIN.FAIL',
+};

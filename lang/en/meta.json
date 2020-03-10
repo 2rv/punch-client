@@ -8,5 +8,10 @@
     "TITLE": "Home page",
     "DESCRIPTION": "Home page",
     "KEYWORDS": ""
+  },
+  "DASHBOARD": {
+    "TITLE": "Dashboard",
+    "DESCRIPTION": "Dashboard page",
+    "KEYWORDS": ""
   }
 }

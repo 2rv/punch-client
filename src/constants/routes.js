@@ -1,6 +1,8 @@
 const ROUTES = {
   HOME: '/',
   RESPONSE: '/response',
+  DASHBOARD: '/dashboard',
+  LOGIN: '/login',
 };
 
 export default ROUTES;

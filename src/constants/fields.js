@@ -6,3 +6,7 @@ export const USER_REQUEST = {
   EMAIL: 'email',
   PHONE: 'phone',
 };
+
+export const LOGIN = {
+  KEY: 'key',
+};

@@ -4,29 +4,53 @@ import styled from 'styled-components';
 import { Field as ReduxField } from 'redux-form';
 
 import { Fluid, Responsive, Padding } from '../../components/layouts';
-import { Box, Text, Loader, Alert } from '../../components';
+import { Box, Text, Loader, Alert, Divider } from '../../components';
 import { FormTitle } from '../../components/titles';
 import { TextField } from '../../components/fields';
 import { PrimaryOutlinedButton } from '../../components/buttons';
+import { PrimaryTab } from '../../components/menus';
 
 import { LOGIN } from '../../constants/fields';
 import { sizes } from '../../theme';
 
-const LoginForm = ({ disabled, submitting, statusError, errorMessage }) => {
+const TAB_LIST = [
+  { id: 0, tid: 'LOGIN.TAB.KEY' },
+  { id: 1, tid: 'LOGIN.TAB.LOGIN' },
+];
+
+const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
+  const [activeTab, setActiveTab] = React.useState(0);
+
+  const handleChangeTab = (index) => {
+    setActiveTab(index);
+  };
+
   return (
     <Fluid>
       <Container>
         <Padding>
           <Block>
-            <FormTitle tid="LOGIN.FORM.TITLE" />
-            {statusError && <AlertError tid={`ERROR.${errorMessage}`} />}
+            <FormTitle withoutOffset tid="LOGIN.FORM.TITLE" />
+            <TabSection>
+              <PrimaryTab items={TAB_LIST} active={activeTab} action={handleChangeTab} />
+              <Divider />
+            </TabSection>
             <FieldSection>
-              <FieldBlock name={LOGIN.KEY} component={TextField} label={<Text tid="LOGIN.FORM.KEY" />} />
+              {activeTab === 0 && (
+                <FieldBlock name={LOGIN.KEY} component={TextField} label={<Text tid="LOGIN.FORM.KEY" />} />
+              )}
+              {activeTab === 1 && (
+                <React.Fragment>
+                  <FieldBlock name={LOGIN.USERNAME} component={TextField} label={<Text tid="LOGIN.FORM.USERNAME" />} />
+                  <FieldBlock name={LOGIN.PASSWORD} component={TextField} label={<Text tid="LOGIN.FORM.PASSWORD" />} />
+                </React.Fragment>
+              )}
             </FieldSection>
             <ButtonSubmit disabled={disabled} type="submit">
               <Text tid="LOGIN.FORM.BUTTON_SUBMIT" />
             </ButtonSubmit>
             {submitting && <Loader />}
+            {error && <AlertError tid={`ERROR.${errorMessage}`} />}
           </Block>
         </Padding>
       </Container>
@@ -35,18 +59,22 @@ const LoginForm = ({ disabled, submitting, statusError, errorMessage }) => {
 };
 
 LoginForm.propTypes = {
-  statusError: PropTypes.bool,
+  error: PropTypes.bool,
   errorMessage: PropTypes.string,
   disabled: PropTypes.bool,
   submitting: PropTypes.bool,
 };
+
+const TabSection = styled.div`
+  margin-bottom: ${sizes.spacing(3)};
+`;
 
 const ButtonSubmit = styled(PrimaryOutlinedButton)`
   width: 100%;
 `;
 
 const AlertError = styled(Alert)`
-  margin-bottom: ${sizes.spacing(2)};
+  margin-top: ${sizes.spacing(2)};
 `;
 
 const FieldBlock = styled(ReduxField)`

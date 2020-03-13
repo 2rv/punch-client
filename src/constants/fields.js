@@ -9,4 +9,6 @@ export const USER_REQUEST = {
 
 export const LOGIN = {
   KEY: 'key',
+  USERNAME: 'login',
+  PASSWORD: 'password',
 };

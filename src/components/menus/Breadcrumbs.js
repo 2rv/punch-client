@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Text from '../Text';
-import { Clickable } from '../../theme/elements';
 
 const Breadcrumbs = ({ className, active, items, action }) => {
   return (
@@ -20,7 +19,6 @@ const Breadcrumbs = ({ className, active, items, action }) => {
 
 const Item = styled.span`
   text-decoration: ${(p) => (p.isActive ? 'none' : 'underline')};
-  ${(p) => (p.isActive ? '' : Clickable)};
 `;
 
 Breadcrumbs.propTypes = {

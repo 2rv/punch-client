@@ -1,5 +1,6 @@
 import api, { setAutorization } from '../utils/request';
 import { redirect } from '../utils/navigation';
+import { convertLoginData } from '../api/login';
 
 import URLS from '../constants/api';
 import ROUTES from '../constants/routes';
@@ -20,10 +21,8 @@ const loginSuccess = (token) => ({
   token,
 });
 
-export const login = ({ key }) => {
-  const payload = {
-    key,
-  };
+export const login = (actionData) => {
+  const payload = convertLoginData(actionData);
 
   return (dispatch) =>
     api

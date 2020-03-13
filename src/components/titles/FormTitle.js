@@ -6,9 +6,9 @@ import { sizes } from '../../theme';
 
 import { Text, Divider } from '../index';
 
-const FormTitle = ({ className, tid }) => {
+const FormTitle = ({ className, tid, withoutOffset }) => {
   return (
-    <Container className={className}>
+    <Container withoutOffset={withoutOffset} className={className}>
       <Title>
         <Text tid={tid} />
       </Title>
@@ -27,12 +27,13 @@ const Container = styled.div`
   font-weight: 400;
   font-size: ${sizes.spacing(6)};
   color: #fff;
-  margin-bottom: ${sizes.spacing(4)};
+  margin-bottom: ${(p) => (p.withoutOffset ? 0 : sizes.spacing(4))};
 `;
 
 FormTitle.propTypes = {
   className: PropTypes.string,
   tid: PropTypes.string,
+  withoutOffset: PropTypes.bool,
 };
 
 export default FormTitle;

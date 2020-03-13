@@ -19,6 +19,8 @@ class LoginContainer extends Component {
     return dispatch(
       login({
         key: form[LOGIN.KEY],
+        username: form[LOGIN.USERNAME],
+        password: form[LOGIN.PASSWORD],
       }),
     );
   };

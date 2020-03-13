@@ -6,5 +6,12 @@
 
   "SIGNATURE_IS_BAD": "Token signature is bad",
   "GDS_NOT_FOUND": "Accounts not found",
-  "VALIDATION_REQUIRED": "This field is required"
+  "VALIDATION_REQUIRED": "This field is required",
+  "AUTH_VALIDATION_LOGIN": "Uncorrect login",
+  "AUTH_VALIDATION_PASSWORD": "Uncorrect password",
+  "LOGIN_COULDNT_FOUND_USER": "Couldn't found user",
+  "AUTH_UNAUTHORIZED": "Unauthorized",
+  "UNCORRECT_OLD_KEY_FOR_REFRESH": "Uncorrect old key",
+  "USERNAME_WITH_THIS_LOGIN_ALREADY_EXISTS": "Username with this username already exists",
+  "UNCORRECT_LOGIN_DATA": "Uncorrect login data"
 }

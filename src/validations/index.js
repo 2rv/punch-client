@@ -36,6 +36,10 @@ const EMAIL_EXP = /^(([^<>()[\]\\.,;:\s@"']+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 export const email = (value) => (!EMAIL_EXP.test(value) ? getError('VALIDATION.EMAIL') : null);
 
 // eslint-disable-next-line max-len
+const USERNAME_EXP = /^(?=.{4,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+export const username = (value) => (!USERNAME_EXP.test(value) ? getError('VALIDATION.USERNAME') : null);
+
+// eslint-disable-next-line max-len
 const PHONE_EXP = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
 export const phone = (value) => (!PHONE_EXP.test(value) ? getError('VALIDATION.PHONE') : null);
 

@@ -13,6 +13,11 @@ export const LOGIN = {
   FAIL: 'LOGIN.FAIL',
 };
 
+export const SIGNUP = {
+  SUCCESS: 'SIGNUP.SUCCESS',
+  FAIL: 'SIGNUP.FAIL',
+};
+
 export const AUTH = {
   SET_DATA: 'AUTH.SET_DATA',
 };

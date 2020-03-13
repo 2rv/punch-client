@@ -1,0 +1,14 @@
+{
+  "FORM": {
+    "TITLE": "Create new account",
+    "BUTTON_SUBMIT": "Sign up",
+    "LOGIN_LINK": "Log in to account"
+  },
+  "SUCCESS": {
+    "TITLE": "Save your key",
+    "KEY": "Key",
+    "BUTTON": "Ok, I saved",
+    "SNACKBAR_COPY": "Key saved in clipboard",
+    "INFO_TEXT": "This is your key for authorization and interaction with your account. Please save it. If you lose it, then you will not be able to regain access to your account."
+  }
+}

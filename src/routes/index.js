@@ -2,12 +2,13 @@ import ROUTES from '../constants/routes';
 
 import initRouter from './router';
 
-import { response, privated } from './redirects';
+import { response, privated, signupSuccess } from './redirects';
 
 const routeSwitch = initRouter({
   [ROUTES.HISTORY]: [privated],
   [ROUTES.HOME]: [privated],
   [ROUTES.RESPONSE]: [privated, response],
+  [ROUTES.SIGNUP_SUCCESS]: [signupSuccess],
 });
 
 export default async (ctx) => {

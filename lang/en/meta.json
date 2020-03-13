@@ -9,9 +9,19 @@
     "DESCRIPTION": "Home page",
     "KEYWORDS": ""
   },
-  "DASHBOARD": {
-    "TITLE": "Dashboard",
-    "DESCRIPTION": "Dashboard page",
+  "LOGIN": {
+    "TITLE": "Login",
+    "DESCRIPTION": "Login page",
+    "KEYWORDS": ""
+  },
+  "SIGNUP": {
+    "TITLE": "Signup",
+    "DESCRIPTION": "Signup page",
+    "KEYWORDS": ""
+  },
+  "SIGNUP_SUCCESS": {
+    "TITLE": "Signup success",
+    "DESCRIPTION": "Signup success page",
     "KEYWORDS": ""
   }
 }

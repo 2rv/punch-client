@@ -2,27 +2,26 @@ import React, { Component } from 'react';
 
 import { Page } from '../../components/layouts';
 import Head from '../_head';
-import { Header, UserResponse } from '../../containers';
+import { Signup } from '../../containers';
 
 import { PAGE_TYPE } from '../../constants/static';
 import { headerNavigatePath } from '../../actions/navigation';
 import ROUTES from '../../constants/routes';
 
-class ResponsePage extends Component {
+class LoginPage extends Component {
   static async getInitialProps({ store }) {
-    store.dispatch(headerNavigatePath(ROUTES.RESPONSE));
+    store.dispatch(headerNavigatePath(ROUTES.LOGIN));
     return {};
   }
 
   render() {
     return (
       <Page>
-        <Head id={PAGE_TYPE.RESPONSE} />
-        <Header />
-        <UserResponse />
+        <Head id={PAGE_TYPE.SIGNUP} />
+        <Signup />
       </Page>
     );
   }
 }
 
-export default ResponsePage;
+export default LoginPage;

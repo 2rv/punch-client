@@ -3,6 +3,8 @@ const ROUTES = {
   RESPONSE: '/response',
   HISTORY: '/history',
   LOGIN: '/login',
+  SIGNUP: '/signup',
+  SIGNUP_SUCCESS: '/signup/success',
 };
 
 export default ROUTES;

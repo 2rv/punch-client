@@ -5,6 +5,7 @@ import navigation from './navigation';
 import userRequest from './userRequest';
 import login from './login';
 import auth from './auth';
+import signup from './signup';
 
 export default combineReducers({
   form,
@@ -12,4 +13,5 @@ export default combineReducers({
   userRequest,
   login,
   auth,
+  signup,
 });

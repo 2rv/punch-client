@@ -1,10 +1,11 @@
 {
   "FORM": {
-    "TITLE": "Sign in to account",
+    "TITLE": "Log in to account",
     "KEY": "Your privated key",
     "USERNAME": "Username",
     "PASSWORD": "Password",
-    "BUTTON_SUBMIT": "Log in"
+    "BUTTON_SUBMIT": "Log in",
+    "SIGNUP_LINK": "Sign up"
   },
   "TAB": {
     "KEY": "Login by key",

@@ -17,6 +17,9 @@ import { PrimaryTab } from '../../components/menus';
 
 import { LOGIN } from '../../constants/fields';
 import { sizes } from '../../theme';
+import ROUTES from '../../constants/routes';
+
+import { redirect } from '../../utils/navigation';
 
 const TAB_LIST = [
   { id: 0, tid: 'LOGIN.TAB.KEY' },
@@ -36,7 +39,12 @@ const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
       <Container>
         <Padding>
           <Block>
-            <FormTitle withoutOffset tid="LOGIN.FORM.TITLE" />
+            <FormTitle
+              withoutOffset
+              tid="LOGIN.FORM.TITLE"
+              sideTid="LOGIN.FORM.SIGNUP_LINK"
+              sideAction={() => redirect(ROUTES.SIGNUP)}
+            />
             <TabSection>
               <PrimaryTab items={TAB_LIST} active={activeTab} action={handleChangeTab} />
               <Divider />
@@ -72,9 +80,10 @@ const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
             <ButtonSubmit disabled={disabled} type="submit">
               <Text tid="LOGIN.FORM.BUTTON_SUBMIT" />
             </ButtonSubmit>
+
             {submitting && <Loader />}
-            {error && <AlertError tid={`ERROR.${errorMessage}`} />}
           </Block>
+          {error && <AlertError tid={`ERROR.${errorMessage}`} />}
         </Padding>
       </Container>
     </Fluid>
@@ -88,8 +97,13 @@ LoginForm.propTypes = {
   submitting: PropTypes.bool,
 };
 
+const AdditionalBlock = styled.div`
+  margin-top: ${sizes.spacing(3)};
+`;
+
 const TabSection = styled.div`
-  margin-bottom: ${sizes.spacing(3)};
+  margin-bottom: ${sizes.spacing(5)};
+  margin-top: ${sizes.spacing(1)};
 `;
 
 const ButtonSubmit = styled(PrimaryOutlinedButton)`
@@ -97,17 +111,17 @@ const ButtonSubmit = styled(PrimaryOutlinedButton)`
 `;
 
 const AlertError = styled(Alert)`
-  margin-top: ${sizes.spacing(2)};
+  margin-top: ${sizes.spacing(3)};
 `;
 
 const FieldBlock = styled(ReduxField)`
   &:not(:last-of-type) {
-    margin-bottom: ${sizes.spacing(2)};
+    margin-bottom: ${sizes.spacing(3)};
   }
 `;
 
 const FieldSection = styled.div`
-  margin-bottom: ${sizes.spacing(2)};
+  margin-bottom: ${sizes.spacing(3)};
 `;
 
 const Container = styled(Responsive)`
@@ -120,7 +134,7 @@ const Container = styled(Responsive)`
 `;
 
 const Block = styled(Box)`
-  padding: 20px 20px;
+  padding: ${sizes.spacing(5)};
 `;
 
 export default LoginForm;

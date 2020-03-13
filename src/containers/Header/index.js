@@ -8,8 +8,8 @@ import Header from './Header';
 
 import { logOut } from '../../actions/login';
 
-const HeaderContainer = ({ logged, headerPath, dispatch }) => {
-  const handleLogOutAction = () => dispatch(logOut());
+const HeaderContainer = ({ logged, headerPath }) => {
+  const handleLogOutAction = () => logOut();
 
   return (
     <AppBar>
@@ -26,7 +26,6 @@ const mapStateToProps = ({ navigation: { logged, headerPath } }) => ({
 HeaderContainer.propTypes = {
   headerPath: PropTypes.string,
   logged: PropTypes.bool,
-  dispatch: PropTypes.func.isRequired,
 };
 
 export default compose(connect(mapStateToProps))(HeaderContainer);

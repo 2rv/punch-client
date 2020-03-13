@@ -6,6 +6,7 @@ import staticData from './static.json';
 import userRequest from './userRequest.json';
 import userResponse from './userResponse.json';
 import login from './login.json';
+import signup from './signup.json';
 
 export default {
   translation: {
@@ -17,5 +18,6 @@ export default {
     USER_REQUEST: userRequest,
     USER_RESPONSE: userResponse,
     LOGIN: login,
+    SIGNUP: signup,
   },
 };

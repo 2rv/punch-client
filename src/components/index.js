@@ -10,3 +10,4 @@ export { default as Progress } from './Progress';
 export { default as ScrollToTop } from './ScrollToTop';
 export { default as Tooltip } from './Tooltip';
 export { default as GlobalMessage } from './GlobalMessage';
+export { default as Snackbar } from './Snackbar';

@@ -9,6 +9,7 @@ import { sizes, colors } from '../../theme';
 import { TextButton } from '../../components/buttons';
 import ROUTES from '../../constants/routes';
 import { Text } from '../../components';
+import { redirect } from '../../utils/navigation';
 
 const MENU_ITEMS = [
   { id: 0, tid: 'NAVIGATION.HEADER.REQUEST', path: ROUTES.HOME },
@@ -21,13 +22,13 @@ const Header = ({ activePath, logOutAction }) => {
       <Menu>
         {MENU_ITEMS.map(({ id, tid, path }) => (
           <React.Fragment key={id}>
-            <MenuItem active={path === activePath} size="medium">
+            <MenuItem onClick={() => redirect(path)} active={path === activePath} size="medium">
               <Text tid={tid} />
             </MenuItem>
           </React.Fragment>
         ))}
       </Menu>
-      <TextButton onClick={logOutAction}>
+      <TextButton size="medium" onClick={logOutAction}>
         <IconExit fontSize="medium" /> <Text tid="NAVIGATION.HEADER.LOGOUT" />
       </TextButton>
     </Container>

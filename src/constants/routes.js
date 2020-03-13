@@ -1,7 +1,7 @@
 const ROUTES = {
   HOME: '/',
   RESPONSE: '/response',
-  DASHBOARD: '/dashboard',
+  HISTORY: '/history',
   LOGIN: '/login',
 };
 

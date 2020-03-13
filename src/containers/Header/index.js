@@ -6,10 +6,14 @@ import { compose } from 'redux';
 import AppBar from './AppBar';
 import Header from './Header';
 
-const HeaderContainer = ({ logged, headerPath }) => {
+import { logOut } from '../../actions/login';
+
+const HeaderContainer = ({ logged, headerPath, dispatch }) => {
+  const handleLogOutAction = () => dispatch(logOut());
+
   return (
     <AppBar>
-      <Header logged={logged} activePath={headerPath} />
+      <Header logOutAction={handleLogOutAction} logged={logged} activePath={headerPath} />
     </AppBar>
   );
 };
@@ -22,6 +26,7 @@ const mapStateToProps = ({ navigation: { logged, headerPath } }) => ({
 HeaderContainer.propTypes = {
   headerPath: PropTypes.string,
   logged: PropTypes.bool,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default compose(connect(mapStateToProps))(HeaderContainer);

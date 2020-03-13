@@ -2,15 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 import { Padding } from '../../components/layouts';
 import { sizes, colors } from '../../theme';
 import { TextButton } from '../../components/buttons';
 import ROUTES from '../../constants/routes';
 import { Text } from '../../components';
 
-const MENU_ITEMS = [{ id: 0, tid: 'NAVIGATION.HEADER.REQUEST', path: ROUTES.HOME }];
+const MENU_ITEMS = [
+  { id: 0, tid: 'NAVIGATION.HEADER.REQUEST', path: ROUTES.HOME },
+  { id: 0, tid: 'NAVIGATION.HEADER.HISTORY', path: ROUTES.HISTORY },
+];
 
-const Header = ({ activePath }) => {
+const Header = ({ activePath, logOutAction }) => {
   return (
     <Container>
       <Menu>
@@ -22,13 +27,21 @@ const Header = ({ activePath }) => {
           </React.Fragment>
         ))}
       </Menu>
+      <TextButton onClick={logOutAction}>
+        <IconExit fontSize="medium" /> <Text tid="NAVIGATION.HEADER.LOGOUT" />
+      </TextButton>
     </Container>
   );
 };
 
 Header.propTypes = {
   activePath: PropTypes.bool,
+  logOutAction: PropTypes.func.isRequired,
 };
+
+const IconExit = styled(ExitToAppIcon)`
+  margin-right: ${sizes.spacing(1)};
+`;
 
 const Menu = styled.div`
   display: flex;

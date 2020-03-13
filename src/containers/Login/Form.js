@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Field as ReduxField } from 'redux-form';
 
+import IconButton from '@material-ui/core/IconButton';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+
 import { Fluid, Responsive, Padding } from '../../components/layouts';
 import { Box, Text, Loader, Alert, Divider } from '../../components';
 import { FormTitle } from '../../components/titles';
@@ -20,6 +25,7 @@ const TAB_LIST = [
 
 const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
   const [activeTab, setActiveTab] = React.useState(0);
+  const [showPassword, setShowPassword] = React.useState(false);
 
   const handleChangeTab = (index) => {
     setActiveTab(index);
@@ -42,7 +48,24 @@ const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
               {activeTab === 1 && (
                 <React.Fragment>
                   <FieldBlock name={LOGIN.USERNAME} component={TextField} label={<Text tid="LOGIN.FORM.USERNAME" />} />
-                  <FieldBlock name={LOGIN.PASSWORD} component={TextField} label={<Text tid="LOGIN.FORM.PASSWORD" />} />
+                  <FieldBlock
+                    type={showPassword ? 'text' : 'password'}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          size="medium"
+                          onClick={() => setShowPassword(!showPassword)}
+                          onMouseDown={(e) => e.preventDefault()}
+                          edge="end"
+                        >
+                          {showPassword ? <Visibility fontSize="small" /> : <VisibilityOff fontSize="small" />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    name={LOGIN.PASSWORD}
+                    component={TextField}
+                    label={<Text tid="LOGIN.FORM.PASSWORD" />}
+                  />
                 </React.Fragment>
               )}
             </FieldSection>

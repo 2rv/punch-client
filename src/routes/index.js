@@ -5,7 +5,7 @@ import initRouter from './router';
 import { response, privated } from './redirects';
 
 const routeSwitch = initRouter({
-  [ROUTES.DASHBOARD]: [privated],
+  [ROUTES.HISTORY]: [privated],
   [ROUTES.HOME]: [privated],
   [ROUTES.RESPONSE]: [privated, response],
 });

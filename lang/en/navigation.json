@@ -1,5 +1,7 @@
 {
   "HEADER": {
-    "REQUEST": "Request"
+    "REQUEST": "Request",
+    "HISTORY": "History",
+    "LOGOUT": "Logout"
   }
 }

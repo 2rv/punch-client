@@ -1,5 +1,5 @@
 {
-  "PATH": {
-    "HOME": "Home"
+  "HEADER": {
+    "REQUEST": "Request"
   }
 }

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Page } from '../../components/layouts';
 import Head from '../_head';
 
+import { Header } from '../../containers';
+
 import { PAGE_TYPE } from '../../constants/static';
 import { headerNavigatePath } from '../../actions/navigation';
 import ROUTES from '../../constants/routes';
@@ -17,6 +19,7 @@ class HomePage extends Component {
     return (
       <Page>
         <Head id={PAGE_TYPE.DASHBOARD} />
+        <Header />
         Privated page
       </Page>
     );

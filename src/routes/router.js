@@ -1,9 +1,9 @@
 function initRouter(routes) {
   return async (path, ctx) => {
-    const routerHandler = routes[path] || null;
+    const routerHandlers = routes[path] || null;
 
-    if (routerHandler !== null) {
-      await routerHandler(ctx);
+    if (routerHandlers !== null) {
+      await routerHandlers.forEach((hanlder) => hanlder(ctx));
     }
   };
 }

@@ -1,16 +1,16 @@
-import { NAVIGATION } from '../actions';
+import { AUTH } from '../actions';
 
 const initialState = {
-  headerPath: null,
+  auth: null,
   logged: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case NAVIGATION.CHANGE_HEADER:
+    case AUTH.SET_DATA:
       return {
         ...state,
-        headerPath: action.headerPath,
+        auth: action.auth,
         logged: action.logged,
       };
 

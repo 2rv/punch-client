@@ -12,3 +12,7 @@ export const LOGIN = {
   SUCCESS: 'LOGIN.SUCCESS',
   FAIL: 'LOGIN.FAIL',
 };
+
+export const AUTH = {
+  SET_DATA: 'AUTH.SET_DATA',
+};

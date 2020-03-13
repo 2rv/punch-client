@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Page } from '../../components/layouts';
 import Head from '../_head';
-import { UserResponse } from '../../containers';
+import { Header, UserResponse } from '../../containers';
 
 import { PAGE_TYPE } from '../../constants/static';
 import { headerNavigatePath } from '../../actions/navigation';
@@ -18,6 +18,7 @@ class ResponsePage extends Component {
     return (
       <Page>
         <Head id={PAGE_TYPE.HOME} />
+        <Header />
         <UserResponse />
       </Page>
     );

@@ -31,7 +31,6 @@ const FormComponent = ({ disabled, loading, error, errorMessage, newKey, loaded 
       <Block>
         {loading && <Loader />}
         <FormTitle bordered tid="REFRESH_KEY.FORM.TITLE" />
-        {error && <AlertError tid={`ERROR.${errorMessage}`} />}
         <FieldSection>
           <FieldBlock
             disabled={loaded}
@@ -62,6 +61,7 @@ const FormComponent = ({ disabled, loading, error, errorMessage, newKey, loaded 
         </ButtonSubmit>
         <Snackbar tid="REFRESH_KEY.SNACKBAR_COPY" active={copied} onClose={() => setCopied(false)} />
       </Block>
+      {error && <AlertError tid={`ERROR.${errorMessage}`} />}
     </Padding>
   );
 };
@@ -83,7 +83,7 @@ const ButtonSubmit = styled(PrimaryOutlinedButton)`
 `;
 
 const AlertError = styled(Alert)`
-  margin-bottom: ${sizes.spacing(3)};
+  margin-top: ${sizes.spacing(3)};
 `;
 
 const FieldBlock = styled(ReduxField)`

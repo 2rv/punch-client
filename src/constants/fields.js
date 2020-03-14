@@ -13,6 +13,19 @@ export const LOGIN = {
   PASSWORD: 'password',
 };
 
+export const LOGIN_UPDATE = {
+  KEY: 'key',
+  USERNAME: 'login',
+  PASSWORD: 'password',
+};
+
 export const REFRESH_KEY = {
   OLD_KEY: 'key',
+};
+
+export const AUTH_USER = {
+  ID: 'id',
+  BALANCE: 'balance',
+  ROLE: 'role',
+  USERNAME: 'login',
 };

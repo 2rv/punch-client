@@ -7,6 +7,7 @@ import login from './login';
 import auth from './auth';
 import signup from './signup';
 import refreshKey from './refreshKey';
+import loginUpdate from './loginUpdate';
 
 export default combineReducers({
   form,
@@ -16,4 +17,5 @@ export default combineReducers({
   auth,
   signup,
   refreshKey,
+  loginUpdate,
 });

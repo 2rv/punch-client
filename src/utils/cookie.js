@@ -8,12 +8,14 @@ export const setCookie = (key, value) => {
 };
 
 export const getCookie = (key, ctx) => {
-  return nextCookie(ctx)[key] || null;
+  const token = nextCookie(ctx)[key];
+  return token === 'null' ? null : token;
 };
 
 export const getBrowserCookie = (key) => {
   if (process.browser) {
-    return cookie.get(key) || null;
+    const token = cookie.get(key);
+    return token === 'null' ? null : token;
   }
 
   return {};

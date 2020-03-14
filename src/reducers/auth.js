@@ -3,6 +3,7 @@ import { AUTH } from '../actions';
 const initialState = {
   token: null,
   logged: null,
+  user: null,
 };
 
 export default (state = initialState, action) => {
@@ -11,6 +12,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         token: action.token,
+        user: action.user,
         logged: action.logged,
       };
 

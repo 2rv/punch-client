@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Page, Padding } from '../../components/layouts';
 import Head from '../_head';
-import { RefreshKey, Header } from '../../containers';
+import { RefreshKey, LoginUpdate, Header } from '../../containers';
 
 import { PAGE_TYPE } from '../../constants/static';
 import { headerNavigatePath } from '../../actions/navigation';
@@ -28,6 +28,9 @@ class SettingsPage extends Component {
             <RefreshKey />
           </SettingItem>
           <SettingItem>
+            <LoginUpdate />
+          </SettingItem>
+          <SettingItem>
             <Padding>
               <ButtonLogout onClick={logOut}>
                 <Text tid="NAVIGATION.SETTINGS.LOGOUT" />
@@ -42,7 +45,7 @@ class SettingsPage extends Component {
 
 const SettingItem = styled.div`
   &:not(:last-of-type) {
-    margin-bottom: ${sizes.spacing(3)};
+    margin-bottom: ${sizes.spacing(4)};
   }
 `;
 

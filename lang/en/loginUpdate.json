@@ -1,0 +1,12 @@
+{
+  "FORM": {
+    "TITLE": "Update login data",
+    "KEY": "Your key",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "SUBMIT": "Update data"
+  },
+  "ALERT": {
+    "SUCCEESS": "Login data updated success"
+  }
+}

@@ -2,5 +2,6 @@
   "REQUIRED": "This field is required",
   "NAME": "Name is incorrect",
   "EMAIL": "Email is incorrect",
+  "USERNAME": "Username is incorrect",
   "PHONE": "Phone is incorrect"
 }

@@ -13,7 +13,8 @@ import { redirect } from '../../utils/navigation';
 
 const MENU_ITEMS = [
   { id: 0, tid: 'NAVIGATION.HEADER.REQUEST', path: ROUTES.HOME },
-  { id: 0, tid: 'NAVIGATION.HEADER.HISTORY', path: ROUTES.HISTORY },
+  { id: 2, tid: 'NAVIGATION.HEADER.HISTORY', path: ROUTES.HISTORY },
+  { id: 3, tid: 'NAVIGATION.HEADER.SETTINGS', path: ROUTES.SETTINGS },
 ];
 
 const Header = ({ activePath, logOutAction }) => {
@@ -28,10 +29,9 @@ const Header = ({ activePath, logOutAction }) => {
           </React.Fragment>
         ))}
       </Menu>
-      <TextButton size="medium" onClick={() => redirect(ROUTES.SETTINGS)}>
-        {/* <IconExit fontSize="medium" /> <Text tid="NAVIGATION.HEADER.LOGOUT" /> */}
-        <Text tid="NAVIGATION.HEADER.SETTINGS" />
-      </TextButton>
+      {/* <TextButton size="medium" onClick={() => redirect(ROUTES.SETTINGS)}>
+        <IconExit fontSize="medium" /> <Text tid="NAVIGATION.HEADER.LOGOUT" />
+      </TextButton> */}
     </Container>
   );
 };

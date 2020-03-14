@@ -13,5 +13,6 @@
   "AUTH_UNAUTHORIZED": "Unauthorized",
   "UNCORRECT_OLD_KEY_FOR_REFRESH": "Uncorrect old key",
   "USERNAME_WITH_THIS_LOGIN_ALREADY_EXISTS": "Username with this username already exists",
-  "UNCORRECT_LOGIN_DATA": "Uncorrect login data"
+  "UNCORRECT_LOGIN_DATA": "Uncorrect login data",
+  "LOGIN_UNCORRECT_OLD_KEY_FOR_REFRESH": "Uncorrect old key"
 }

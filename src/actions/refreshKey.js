@@ -1,8 +1,6 @@
-import api, { setAutorization } from '../utils/request';
-import { redirect } from '../utils/navigation';
+import api from '../utils/request';
 
 import URLS from '../constants/api';
-import ROUTES from '../constants/routes';
 
 import { REFRESH_KEY } from '.';
 
@@ -27,11 +25,6 @@ export const refreshKey = ({ key }) => (dispatch) => {
 
   return api
     .post(URLS.REFRESH_KEY, payload)
-    .then(({ data }) => {
-      setAutorization(data.accessToken);
-      redirect(ROUTES.HOME);
-
-      return dispatch(setSuccessData(data));
-    })
+    .then(({ data }) => dispatch(setSuccessData(data)))
     .catch(({ response: { data } }) => dispatch(setFail(data.message)));
 };

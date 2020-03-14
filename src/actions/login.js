@@ -8,7 +8,7 @@ import { LOGIN } from '.';
 
 export const logOut = () => {
   setAutorization(null);
-  redirect(ROUTES.LOGIN);
+  redirect(ROUTES.LOGIN, { local: false });
 };
 
 const loginFail = (message) => ({

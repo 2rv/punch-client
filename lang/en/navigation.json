@@ -4,5 +4,8 @@
     "HISTORY": "History",
     "LOGOUT": "Logout",
     "SETTINGS": "Settings"
+  },
+  "SETTINGS": {
+    "LOGOUT": "Log out from account"
   }
 }

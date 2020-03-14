@@ -12,3 +12,7 @@ export const LOGIN = {
   USERNAME: 'login',
   PASSWORD: 'password',
 };
+
+export const REFRESH_KEY = {
+  OLD_KEY: 'key',
+};

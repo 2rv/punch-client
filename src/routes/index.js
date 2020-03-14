@@ -6,6 +6,7 @@ import { response, privated, signupSuccess } from './redirects';
 
 const routeSwitch = initRouter({
   [ROUTES.HISTORY]: [privated],
+  [ROUTES.SETTINGS]: [privated],
   [ROUTES.HOME]: [privated],
   [ROUTES.RESPONSE]: [privated, response],
   [ROUTES.SIGNUP_SUCCESS]: [signupSuccess],

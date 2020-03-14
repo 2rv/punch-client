@@ -7,14 +7,16 @@ import { compose } from 'redux';
 import { FORM_NAMES } from '../../constants';
 import { isLoaded, getData, isLoading, isError } from '../../utils/store';
 
-import { validate } from '../../validations/userRequest';
-import { sendUserRequest } from '../../actions/userRequest';
+import { validate } from '../../validations/refreshKey';
+import { refreshKey } from '../../actions/refreshKey';
+import { REFRESH_KEY } from '../../constants/fields';
+
 import FormComponent from './Form';
 
 class RefreshKeyContainer extends Component {
   refresh = (form) => {
     const { dispatch } = this.props;
-    return dispatch(sendUserRequest());
+    return dispatch(refreshKey({ key: form[REFRESH_KEY.OLD_KEY] }));
   };
 
   isFormDisabled = () => {
@@ -30,14 +32,16 @@ class RefreshKeyContainer extends Component {
   };
 
   render() {
-    const { data, isDataLoaded, handleSubmit, errorMessage } = this.props;
+    const { data, isDataLoaded, handleSubmit, isDataError, errorMessage } = this.props;
 
     return (
-      <form onSubmit={handleSubmit((form) => this.send(form))}>
+      <form onSubmit={handleSubmit((form) => this.refresh(form))}>
         <FormComponent
-          dataLoaded={isDataLoaded}
+          loaded={isDataLoaded}
+          newKey={data.key}
           loading={this.isFormLoading()}
           errorMessage={errorMessage}
+          error={isDataError}
           disabled={this.isFormDisabled()}
           data={data}
         />
@@ -68,6 +72,7 @@ RefreshKeyContainer.propTypes = {
   submitting: PropTypes.bool,
   isDataLoading: PropTypes.bool,
   isDataLoaded: PropTypes.bool,
+  isDataError: PropTypes.bool,
   pristine: PropTypes.bool,
 };
 

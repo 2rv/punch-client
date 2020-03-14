@@ -4,7 +4,7 @@ export const setAuthData = (auth = null) => {
   return (dispatch) =>
     dispatch({
       type: AUTH.SET_DATA,
-      auth,
-      logged: !!auth,
+      token: auth.token,
+      logged: auth.isLoggedIn,
     });
 };

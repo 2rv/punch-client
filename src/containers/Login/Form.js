@@ -97,10 +97,6 @@ LoginForm.propTypes = {
   submitting: PropTypes.bool,
 };
 
-const AdditionalBlock = styled.div`
-  margin-top: ${sizes.spacing(3)};
-`;
-
 const TabSection = styled.div`
   margin-bottom: ${sizes.spacing(5)};
   margin-top: ${sizes.spacing(1)};

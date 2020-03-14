@@ -5,6 +5,8 @@ export default {
   error: '#f44336',
   success: 'green',
 
+  darkLight: '#424242',
+
   darkText: '#222',
   darkLightText: '#444',
 };

@@ -4,6 +4,7 @@ export const PAGE_TYPE = {
   LOGIN: 'LOGIN',
   SIGNUP: 'SIGNUP',
   SIGNUP_SUCCESS: 'SIGNUP_SUCCESS',
+  SETTINGS: 'SETTINGS',
 };
 
 export const REQUEST_DATA_TYPE = {

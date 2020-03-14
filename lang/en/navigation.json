@@ -2,6 +2,7 @@
   "HEADER": {
     "REQUEST": "Request",
     "HISTORY": "History",
-    "LOGOUT": "Logout"
+    "LOGOUT": "Logout",
+    "SETTINGS": "Settings"
   }
 }

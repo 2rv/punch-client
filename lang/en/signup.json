@@ -2,7 +2,8 @@
   "FORM": {
     "TITLE": "Create new account",
     "BUTTON_SUBMIT": "Sign up",
-    "LOGIN_LINK": "Log in to account"
+    "LOGIN_LINK": "Log in to account",
+    "CAPTCHA": "Captcha"
   },
   "SUCCESS": {
     "TITLE": "Save your key",

@@ -7,6 +7,7 @@ import userRequest from './userRequest.json';
 import userResponse from './userResponse.json';
 import login from './login.json';
 import signup from './signup.json';
+import refreshKey from './refreshKey.json';
 
 export default {
   translation: {
@@ -19,5 +20,6 @@ export default {
     USER_RESPONSE: userResponse,
     LOGIN: login,
     SIGNUP: signup,
+    REFRESH_KEY: refreshKey,
   },
 };

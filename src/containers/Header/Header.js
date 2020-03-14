@@ -28,8 +28,9 @@ const Header = ({ activePath, logOutAction }) => {
           </React.Fragment>
         ))}
       </Menu>
-      <TextButton size="medium" onClick={logOutAction}>
-        <IconExit fontSize="medium" /> <Text tid="NAVIGATION.HEADER.LOGOUT" />
+      <TextButton size="medium" onClick={() => redirect(ROUTES.SETTINGS)}>
+        {/* <IconExit fontSize="medium" /> <Text tid="NAVIGATION.HEADER.LOGOUT" /> */}
+        <Text tid="NAVIGATION.HEADER.SETTINGS" />
       </TextButton>
     </Container>
   );

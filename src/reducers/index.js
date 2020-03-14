@@ -6,6 +6,7 @@ import userRequest from './userRequest';
 import login from './login';
 import auth from './auth';
 import signup from './signup';
+import refreshKey from './refreshKey';
 
 export default combineReducers({
   form,
@@ -14,4 +15,5 @@ export default combineReducers({
   login,
   auth,
   signup,
+  refreshKey,
 });

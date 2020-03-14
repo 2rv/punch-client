@@ -29,7 +29,7 @@ export const login = (actionData) => {
       .post(URLS.LOGIN, payload)
       .then(({ data }) => {
         setAutorization(data.accessToken);
-        redirect(ROUTES.DASHBOARD);
+        redirect(ROUTES.HOME);
 
         return dispatch(loginSuccess(data.accessToken));
       })

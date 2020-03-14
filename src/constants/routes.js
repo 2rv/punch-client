@@ -5,6 +5,7 @@ const ROUTES = {
   LOGIN: '/login',
   SIGNUP: '/signup',
   SIGNUP_SUCCESS: '/signup/success',
+  SETTINGS: '/settings',
 };
 
 export default ROUTES;

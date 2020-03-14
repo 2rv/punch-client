@@ -67,7 +67,6 @@ const FormComponent = ({ disabled, loading, error, errorMessage, newKey, loaded 
 };
 
 FormComponent.propTypes = {
-  error: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   newKey: PropTypes.string,

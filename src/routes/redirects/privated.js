@@ -3,9 +3,9 @@ import { redirect } from '../../utils/navigation';
 import ROUTES from '../../constants/routes';
 
 export default (ctx) => {
-  const { res, auth } = ctx;
+  const { res, token } = ctx;
 
-  if (auth === null || auth.isLoggedIn !== true) {
+  if (!token) {
     if (res) {
       res.writeHead(302, {
         Location: ROUTES.LOGIN,

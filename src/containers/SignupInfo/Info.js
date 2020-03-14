@@ -50,7 +50,7 @@ const Info = ({ hashKey }) => {
               />
             </KeySection>
             <Divider />
-            <ButtonSubmit onClick={() => redirect(ROUTES.HOME)}>
+            <ButtonSubmit onClick={() => redirect(ROUTES.LOGIN)}>
               <Text tid="SIGNUP.SUCCESS.BUTTON" />
             </ButtonSubmit>
           </Block>

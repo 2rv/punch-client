@@ -19,15 +19,12 @@ export const setAutorizationHeader = (tokenHash) => {
 export const setAutorization = (token) => {
   setAutorizationHeader(token);
 
-  setCookie(COOKIE_AUTH, {
-    token,
-    isLoggedIn: !!token,
-  });
+  setCookie(COOKIE_AUTH, token);
 };
 
-const auth = getBrowserCookie(COOKIE_AUTH);
-if (auth.token) {
-  setAutorizationHeader(auth.token);
+const authToken = getBrowserCookie(COOKIE_AUTH);
+if (authToken) {
+  setAutorizationHeader(authToken);
 }
 
 const onResponseSuccess = (response) => response;

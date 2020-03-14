@@ -7,6 +7,8 @@ export default {
 
   darkLight: '#424242',
 
+  pageBackground: '#303030',
+
   darkText: '#222',
   darkLightText: '#444',
 };

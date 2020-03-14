@@ -1,4 +1,4 @@
-import api, { setAutorization } from '../utils/request';
+import api from '../utils/request';
 import { redirect } from '../utils/navigation';
 
 import URLS from '../constants/api';
@@ -10,9 +10,8 @@ const signupFail = (message) => ({
   message,
 });
 
-const signupSuccess = (token, key) => ({
+const signupSuccess = (key) => ({
   type: SIGNUP.SUCCESS,
-  token,
   key,
 });
 
@@ -21,10 +20,8 @@ export const signup = () => {
     api
       .post(URLS.SIGNUP)
       .then(({ data }) => {
-        setAutorization(data.accessToken);
         redirect(ROUTES.SIGNUP_SUCCESS);
-
-        return dispatch(signupSuccess(data.accessToken, data.key));
+        return dispatch(signupSuccess(data.key));
       })
       .catch(({ response: { data } }) => dispatch(signupFail(data.message)));
 };

@@ -38,12 +38,12 @@ class MyApp extends App {
 
   // Fetching serialized(JSON) store state
   static async getInitialProps({ Component, ctx }) {
-    const auth = await getCookie(COOKIE_AUTH, ctx);
-    await routing({ ...ctx, auth });
-    const pageProps = Component.getInitialProps ? await Component.getInitialProps({ ...ctx, auth }) : { auth };
+    const token = await getCookie(COOKIE_AUTH, ctx);
+    await routing({ ...ctx, token });
+    const pageProps = Component.getInitialProps ? await Component.getInitialProps({ ...ctx, token }) : { token };
 
-    await setAutorizationHeader(auth.token);
-    ctx.store.dispatch(setAuthData(auth));
+    await setAutorizationHeader(token);
+    ctx.store.dispatch(setAuthData(token));
 
     return { pageProps };
   }

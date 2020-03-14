@@ -1,7 +1,7 @@
 import { AUTH } from '../actions';
 
 const initialState = {
-  auth: null,
+  token: null,
   logged: null,
 };
 
@@ -10,7 +10,7 @@ export default (state = initialState, action) => {
     case AUTH.SET_DATA:
       return {
         ...state,
-        auth: action.auth,
+        token: action.token,
         logged: action.logged,
       };
 

@@ -16,5 +16,6 @@
   "UNCORRECT_LOGIN_DATA": "Uncorrect login data",
   "LOGIN_UNCORRECT_OLD_KEY_FOR_REFRESH": "Uncorrect key",
   "LOGIN_USERNAME_WITH_THIS_LOGIN_ALREADY_EXISTS": "Account with this username already exists",
-  "CAPTCHA_VALUE_IS_UNCORRECT": "Captcha is uncorrect"
+  "CAPTCHA_VALUE_IS_UNCORRECT": "Captcha is uncorrect",
+  "CAPTCHA_WITH_THIS_ID_NOT_FOUND": "This captcha is expired or does not exist"
 }

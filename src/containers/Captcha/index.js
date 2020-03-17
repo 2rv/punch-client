@@ -29,8 +29,8 @@ class CaptchaContainer extends Component {
     return (
       <Container>
         {isDataLoading ? <Progress size={sizes.spacing(5)} /> : <CaptchaImage src={data.image} />}
-        <Wrapper>
-          <ReplayIcon onClick={this.getCaptcha} />
+        <Wrapper onClick={this.getCaptcha}>
+          <ReplayIcon />
         </Wrapper>
       </Container>
     );

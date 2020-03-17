@@ -5,22 +5,29 @@ import { reduxForm } from 'redux-form';
 import { compose } from 'redux';
 
 import { FORM_NAMES } from '../../constants';
+import { SIGNUP } from '../../constants/fields';
 
 import { validate } from '../../validations/signup';
 import { signup } from '../../actions/signup';
+import { getData } from '../../utils/store';
 
 import SignupForm from './Form';
 
 class SignupContainer extends Component {
-  signup = () => {
-    const { dispatch } = this.props;
+  signup = (form) => {
+    const { dispatch, captcha } = this.props;
 
-    return dispatch(signup());
+    return dispatch(
+      signup({
+        captchaId: captcha.id,
+        captchaValue: form[SIGNUP.CAPTCHA_VALUE],
+      }),
+    );
   };
 
   isFormDisabled = () => {
-    const { valid, submitting } = this.props;
-    return !valid || submitting;
+    const { valid, submitting, pristine } = this.props;
+    return !valid || submitting || pristine;
   };
 
   render() {
@@ -44,14 +51,16 @@ const loginForm = reduxForm({
   validate,
 });
 
-const mapStateToProps = ({ signup: { errorMessage, error } }) => ({
+const mapStateToProps = ({ signup: { errorMessage, error }, captcha: { data } }) => ({
   statusError: error,
   errorMessage,
+  captcha: getData(data),
 });
 
 SignupContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  captcha: PropTypes.object.isRequired,
   errorMessage: PropTypes.string,
   statusError: PropTypes.bool,
   valid: PropTypes.bool,

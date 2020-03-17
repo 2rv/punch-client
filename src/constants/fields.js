@@ -7,6 +7,11 @@ export const USER_REQUEST = {
   PHONE: 'phone',
 };
 
+export const SIGNUP = {
+  CAPTCHA_VALUE: 'captchaValue',
+  CAPTCHA_ID: 'captchaId',
+};
+
 export const LOGIN = {
   KEY: 'key',
   USERNAME: 'login',
@@ -28,4 +33,9 @@ export const AUTH_USER = {
   BALANCE: 'balance',
   ROLE: 'role',
   USERNAME: 'login',
+};
+
+export const CAPTCHA = {
+  ID: 'id',
+  DATA: 'data',
 };

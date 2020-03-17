@@ -1,25 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import ClientCaptcha from 'react-client-captcha';
+import { Field as ReduxField } from 'redux-form';
 
 import { Fluid, Responsive, Padding } from '../../components/layouts';
 import { Box, Text, Loader, Alert } from '../../components';
 import { FormTitle } from '../../components/titles';
 import { PrimaryOutlinedButton } from '../../components/buttons';
 import { TextField } from '../../components/fields';
-import { sizes, colors } from '../../theme';
+import { sizes } from '../../theme';
 import ROUTES from '../../constants/routes';
-
+import { Captcha } from '../index';
 import { redirect } from '../../utils/navigation';
+import { SIGNUP } from '../../constants/fields';
 
 const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
-  const [code, setCode] = React.useState(null);
-  const [inputCode, setInputCode] = React.useState(null);
-
-  const isCaptchaError = inputCode === null ? false : code !== inputCode;
-  const isDisabled = disabled || code !== inputCode;
-
   return (
     <Fluid>
       <Container>
@@ -31,25 +26,16 @@ const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
               sideAction={() => redirect(ROUTES.LOGIN)}
             />
             <FieldSection>
-              <TextField
-                onChange={(e) => setInputCode(e.target.value)}
-                value={inputCode}
-                type="text"
-                error={isCaptchaError}
+              <ReduxField
+                name={SIGNUP.CAPTCHA_VALUE}
+                component={TextField}
                 label={<Text tid="SIGNUP.FORM.CAPTCHA" />}
               />
               <CaptchaBlock>
-                <ClientCaptcha
-                  backgroundColor={colors.darkLight}
-                  fontColor="#fff"
-                  retry={false}
-                  height={56}
-                  width={120}
-                  captchaCode={(captchaCode) => setCode(captchaCode)}
-                />
+                <Captcha />
               </CaptchaBlock>
             </FieldSection>
-            <ButtonSubmit disabled={isDisabled} type="submit">
+            <ButtonSubmit disabled={disabled} type="submit">
               <Text tid="SIGNUP.FORM.BUTTON_SUBMIT" />
             </ButtonSubmit>
 
@@ -70,12 +56,10 @@ LoginForm.propTypes = {
 };
 
 const CaptchaBlock = styled.div`
-  border-radius: ${sizes.spacing(1)};
-  overflow: hidden;
   margin-left: ${sizes.spacing(3)};
   display: flex;
   align-items: center;
-  background-color: ${colors.darkLight};
+  width: 200px;
 `;
 
 const ButtonSubmit = styled(PrimaryOutlinedButton)`

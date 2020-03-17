@@ -8,6 +8,7 @@ import auth from './auth';
 import signup from './signup';
 import refreshKey from './refreshKey';
 import loginUpdate from './loginUpdate';
+import captcha from './captcha';
 
 export default combineReducers({
   form,
@@ -18,4 +19,5 @@ export default combineReducers({
   signup,
   refreshKey,
   loginUpdate,
+  captcha,
 });

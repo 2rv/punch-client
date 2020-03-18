@@ -36,7 +36,7 @@ const EMAIL_EXP = /^(([^<>()[\]\\.,;:\s@"']+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 export const email = (value) => (!EMAIL_EXP.test(value) ? getError('VALIDATION.EMAIL') : null);
 
 // eslint-disable-next-line max-len
-const USERNAME_EXP = /^(?=.{4,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
+const USERNAME_EXP = /^[a-z0-9_-]{4,20}$/;
 export const username = (value) => (!USERNAME_EXP.test(value) ? getError('VALIDATION.USERNAME') : null);
 
 // eslint-disable-next-line max-len

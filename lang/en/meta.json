@@ -28,5 +28,10 @@
     "TITLE": "Account settings",
     "DESCRIPTION": "Account settings page",
     "KEYWORDS": ""
+  },
+  "HISTORY": {
+    "TITLE": "Response history",
+    "DESCRIPTION": "Response history page",
+    "KEYWORDS": ""
   }
 }

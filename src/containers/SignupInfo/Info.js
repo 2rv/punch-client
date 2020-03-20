@@ -81,11 +81,9 @@ const KeySection = styled.div`
 
 const Container = styled(Responsive)`
   max-width: 600px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px 0;
 `;
 
 const Block = styled(Box)`

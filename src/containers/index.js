@@ -7,3 +7,4 @@ export { default as SignupInfo } from './SignupInfo';
 export { default as RefreshKey } from './RefreshKey';
 export { default as LoginUpdate } from './LoginUpdate';
 export { default as Captcha } from './Captcha';
+export { default as HistoryResponse } from './HistoryResponse';

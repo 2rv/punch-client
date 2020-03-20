@@ -15,7 +15,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <Page>
+      <Page align="center">
         <Head id={PAGE_TYPE.HOME} />
         <Header />
         <UserRequest />

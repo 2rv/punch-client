@@ -62,11 +62,9 @@ const Block = styled(Card)`
 
 const Container = styled(Responsive)`
   max-width: 700px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px 0;
 `;
 
 export default FormComponent;

@@ -16,7 +16,7 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <Page>
+      <Page align="center">
         <Head id={PAGE_TYPE.SIGNUP} />
         <Signup />
       </Page>

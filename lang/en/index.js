@@ -9,6 +9,7 @@ import login from './login.json';
 import signup from './signup.json';
 import refreshKey from './refreshKey.json';
 import loginUpdate from './loginUpdate.json';
+import history from './history.json';
 
 export default {
   translation: {
@@ -23,5 +24,6 @@ export default {
     SIGNUP: signup,
     REFRESH_KEY: refreshKey,
     LOGIN_UPDATE: loginUpdate,
+    HISTORY: history,
   },
 };

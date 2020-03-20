@@ -20,7 +20,7 @@ class SettingsPage extends Component {
 
   render() {
     return (
-      <Page>
+      <Page align="center">
         <Head id={PAGE_TYPE.SETTINGS} />
         <Header />
         <Settings>
@@ -56,11 +56,9 @@ const ButtonLogout = styled(OutlinedButton)`
 const Settings = styled.div`
   max-width: 700px;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: ${sizes.sectionOffsetSmall} 0;
   margin: 0 auto;
 `;
 

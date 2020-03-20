@@ -4,19 +4,23 @@ import styled from 'styled-components';
 
 import { Fluid, Responsive, Padding } from '../../components/layouts';
 import { ListTitle } from '../../components/titles';
-import { sizes } from '../../theme';
+import { Loader, Alert } from '../../components';
 
 import SkeletonList from './Skeleton';
 import CardList from './Сard';
 
-const Content = () => {
+const Content = ({ data, loading, loaded, error, errorMessage }) => {
   return (
     <Fluid>
       <Container>
         <Padding>
           <ListTitle tid="HISTORY.LIST.TITLE" />
-          <SkeletonList />
-          {/* <CardList /> */}
+          {loading && <SkeletonList />}
+          {loading && <Loader />}
+
+          {loaded && <CardList items={data} />}
+
+          {error && <Alert tid={`ERROR.${errorMessage}`} />}
         </Padding>
       </Container>
     </Fluid>
@@ -24,7 +28,11 @@ const Content = () => {
 };
 
 Content.propTypes = {
-  // data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
+  loaded: PropTypes.bool,
+  loading: PropTypes.bool,
+  error: PropTypes.bool,
+  errorMessage: PropTypes.string,
 };
 
 const Container = styled(Responsive)`

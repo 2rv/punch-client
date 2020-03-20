@@ -11,8 +11,8 @@ const ResponseGrid = ({ children }) => {
 const Container = styled.div`
   display: grid;
   grid-gap: ${sizes.spacing(3)};
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: '. .';
+  grid-template-columns: 1fr;
+  grid-template-areas: '.';
 `;
 
 ResponseGrid.propTypes = {

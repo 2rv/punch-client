@@ -8,9 +8,9 @@ import { sizes } from '../../theme';
 const SkeletonList = () => {
   return (
     <ResponseGrid>
-      <Item variant="rect" height="80px" />
-      <Item variant="rect" height="80px" />
-      <Item variant="rect" height="80px" />
+      <Item variant="rect" height="100px" />
+      <Item variant="rect" height="100px" />
+      <Item variant="rect" height="100px" />
     </ResponseGrid>
   );
 };

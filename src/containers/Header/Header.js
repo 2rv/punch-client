@@ -15,9 +15,10 @@ const MENU_ITEMS = [
   { id: 0, tid: 'NAVIGATION.HEADER.REQUEST', path: ROUTES.HOME },
   { id: 2, tid: 'NAVIGATION.HEADER.HISTORY', path: ROUTES.HISTORY },
   { id: 3, tid: 'NAVIGATION.HEADER.SETTINGS', path: ROUTES.SETTINGS },
+  { id: 4, tid: 'NAVIGATION.HEADER.PAYMENT', path: ROUTES.PAYMENT },
 ];
 
-const Header = ({ activePath, logOutAction }) => {
+const Header = ({ activePath }) => {
   return (
     <Container>
       <Menu>

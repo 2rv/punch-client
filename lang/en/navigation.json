@@ -3,7 +3,8 @@
     "REQUEST": "Request",
     "HISTORY": "History",
     "LOGOUT": "Logout",
-    "SETTINGS": "Settings"
+    "SETTINGS": "Settings",
+    "PAYMENT": "Payment"
   },
   "SETTINGS": {
     "LOGOUT": "Log out from account"

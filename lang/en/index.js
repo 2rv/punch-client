@@ -10,6 +10,7 @@ import signup from './signup.json';
 import refreshKey from './refreshKey.json';
 import loginUpdate from './loginUpdate.json';
 import history from './history.json';
+import payment from './payment.json';
 
 export default {
   translation: {
@@ -25,5 +26,6 @@ export default {
     REFRESH_KEY: refreshKey,
     LOGIN_UPDATE: loginUpdate,
     HISTORY: history,
+    PAYMENT: payment,
   },
 };

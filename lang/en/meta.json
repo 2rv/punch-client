@@ -33,5 +33,10 @@
     "TITLE": "Response history",
     "DESCRIPTION": "Response history page",
     "KEYWORDS": ""
+  },
+  "PAYMENT": {
+    "TITLE": "Payment",
+    "DESCRIPTION": "Payment page",
+    "KEYWORDS": ""
   }
 }

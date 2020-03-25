@@ -2,14 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import IconButton from '@material-ui/core/IconButton';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FileCopyIcon from '@material-ui/icons/FileCopy';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-
-import { TextField } from '../../components/fields';
+import { CopyField } from '../../components/fields';
 import { Fluid, Responsive, Padding } from '../../components/layouts';
-import { Box, Text, Divider, Snackbar } from '../../components';
+import { Box, Text, Divider } from '../../components';
 import { FormTitle } from '../../components/titles';
 import { PrimaryOutlinedButton } from '../../components/buttons';
 
@@ -18,12 +13,6 @@ import ROUTES from '../../constants/routes';
 import { redirect } from '../../utils/navigation';
 
 const Info = ({ hashKey }) => {
-  const [copied, setCopied] = React.useState(false);
-
-  const onCopyKey = () => {
-    setCopied(true);
-  };
-
   return (
     <Fluid>
       <Container>
@@ -34,27 +23,13 @@ const Info = ({ hashKey }) => {
               <Text tid="SIGNUP.SUCCESS.INFO_TEXT" />
             </InfoText>
             <KeySection>
-              <TextField
-                value={hashKey}
-                type="text"
-                endAdornment={
-                  <InputAdornment position="end">
-                    <CopyToClipboard text={hashKey} onCopy={onCopyKey}>
-                      <IconButton size="medium" edge="end">
-                        <FileCopyIcon fontSize="small" />
-                      </IconButton>
-                    </CopyToClipboard>
-                  </InputAdornment>
-                }
-                label={<Text tid="SIGNUP.SUCCESS.KEY" />}
-              />
+              <CopyField value={hashKey} fieldTid="SIGNUP.SUCCESS.KEY" alertTid="SIGNUP.SUCCESS.SNACKBAR_COPY" />
             </KeySection>
             <Divider />
             <ButtonSubmit onClick={() => redirect(ROUTES.LOGIN)}>
               <Text tid="SIGNUP.SUCCESS.BUTTON" />
             </ButtonSubmit>
           </Block>
-          <Snackbar tid="SIGNUP.SUCCESS.SNACKBAR_COPY" active={copied} onClose={() => setCopied(false)} />
         </Padding>
       </Container>
     </Fluid>

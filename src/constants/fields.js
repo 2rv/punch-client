@@ -39,3 +39,7 @@ export const CAPTCHA = {
   ID: 'id',
   DATA: 'data',
 };
+
+export const PAYMENT_DATA = {
+  ID: 'id',
+};

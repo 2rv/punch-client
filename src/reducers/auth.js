@@ -3,7 +3,7 @@ import { AUTH } from '../actions';
 const initialState = {
   token: null,
   logged: null,
-  user: null,
+  user: {},
   loading: null,
 };
 

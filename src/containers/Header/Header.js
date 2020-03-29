@@ -23,17 +23,21 @@ const Header = ({ activePath, userBalance }) => {
       <DesctopVersion>
         <Container>
           <DesctopMenu activePath={activePath} items={MENU_ITEMS} />
-          <BalanceInfo>
-            <Text tid="NAVIGATION.INFO.BALANCE" values={{ balance: userBalance }} />
-          </BalanceInfo>
+          {userBalance && (
+            <BalanceInfo>
+              <Text tid="NAVIGATION.INFO.BALANCE" values={{ balance: userBalance }} />
+            </BalanceInfo>
+          )}
         </Container>
       </DesctopVersion>
       <MobileVersion>
         <Container>
           <MobileMenu activePath={activePath} items={MENU_ITEMS} />
-          <BalanceInfo>
-            <Text tid="NAVIGATION.INFO.BALANCE" values={{ balance: userBalance }} />
-          </BalanceInfo>
+          {userBalance && (
+            <BalanceInfo>
+              <Text tid="NAVIGATION.INFO.BALANCE" values={{ balance: userBalance }} />
+            </BalanceInfo>
+          )}
         </Container>
       </MobileVersion>
     </React.Fragment>

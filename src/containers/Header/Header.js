@@ -17,13 +17,13 @@ const MENU_ITEMS = [
   { id: 3, tid: 'NAVIGATION.HEADER.SETTINGS', path: ROUTES.SETTINGS },
 ];
 
-const Header = ({ activePath, userBalance }) => {
+const Header = ({ activePath, userBalance = null }) => {
   return (
     <React.Fragment>
       <DesctopVersion>
         <Container>
           <DesctopMenu activePath={activePath} items={MENU_ITEMS} />
-          {userBalance && (
+          {userBalance !== null && (
             <BalanceInfo>
               <Text tid="NAVIGATION.INFO.BALANCE" values={{ balance: userBalance }} />
             </BalanceInfo>
@@ -33,7 +33,7 @@ const Header = ({ activePath, userBalance }) => {
       <MobileVersion>
         <Container>
           <MobileMenu activePath={activePath} items={MENU_ITEMS} />
-          {userBalance && (
+          {userBalance !== null && (
             <BalanceInfo>
               <Text tid="NAVIGATION.INFO.BALANCE" values={{ balance: userBalance }} />
             </BalanceInfo>

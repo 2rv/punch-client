@@ -6,7 +6,7 @@ import URLS from '../constants/api';
 import { logOut } from './login';
 
 export const setAuthData = (token) => {
-  const user = token ? performUserAuthData(jwtDecode(token)) : null;
+  const user = token ? performUserAuthData(jwtDecode(token)) : {};
 
   return (dispatch) =>
     dispatch({

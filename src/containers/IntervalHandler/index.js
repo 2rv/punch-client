@@ -15,10 +15,12 @@ class IntervalHandlerContainer extends React.Component {
   }
 
   componentDidMount() {
-    const { dispatch, userBalance } = this.props;
+    const { dispatch, userBalance, logged } = this.props;
 
-    this.updateInterval();
-    dispatch(getUserBalance(userBalance));
+    if (logged) {
+      this.updateInterval();
+      dispatch(getUserBalance(userBalance));
+    }
   }
 
   componentWillUnmount() {
@@ -52,6 +54,7 @@ class IntervalHandlerContainer extends React.Component {
 
 const mapStateToProps = ({
   auth: {
+    logged,
     user: { balance },
   },
 }) => ({
@@ -60,7 +63,7 @@ const mapStateToProps = ({
 
 IntervalHandlerContainer.propTypes = {
   userBalance: PropTypes.number.isRequired,
-  bitcoinPaymentAddress: PropTypes.string,
+  logged: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

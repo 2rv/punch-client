@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import { Page } from '../../components/layouts';
+import { Page, Responsive } from '../../components/layouts';
 import Head from '../_head';
-import { Header, Payment } from '../../containers';
+import { Header, PaymentAddress, HistoryPayment } from '../../containers';
+import { SectionGrid } from '../../components/grids';
 
 import { PAGE_TYPE } from '../../constants/static';
 import { headerNavigatePath } from '../../actions/navigation';
@@ -18,7 +19,12 @@ class SettingsPage extends Component {
       <Page align="center">
         <Head id={PAGE_TYPE.PAYMENT} />
         <Header />
-        <Payment />
+        <Responsive layout="small">
+          <SectionGrid>
+            <PaymentAddress />
+            <HistoryPayment />
+          </SectionGrid>
+        </Responsive>
       </Page>
     );
   }

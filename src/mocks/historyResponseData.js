@@ -30,7 +30,7 @@ export default [
         ],
       },
     ],
-    createdDate: '10.10.2020 16:30',
+    createDate: '10.10.2020 16:30',
   },
   {
     block: [
@@ -75,7 +75,7 @@ export default [
         ],
       },
     ],
-    createdDate: '07.10.2020 12:12',
+    createDate: '07.10.2020 12:12',
   },
   {
     block: [
@@ -96,6 +96,6 @@ export default [
         ],
       },
     ],
-    createdDate: '02.10.2020 19:54',
+    createDate: '02.10.2020 19:54',
   },
 ];

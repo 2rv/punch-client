@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 
 import { getData, isLoaded, isLoading, isError } from '../../utils/store';
-import { getHistoryResponse } from '../../actions/historyResponse';
+import { getHistoryResponse, updateHistoryResponse } from '../../actions/historyResponse';
 
 import ListContent from './Content';
 

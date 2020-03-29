@@ -8,4 +8,5 @@ export { default as RefreshKey } from './RefreshKey';
 export { default as LoginUpdate } from './LoginUpdate';
 export { default as Captcha } from './Captcha';
 export { default as HistoryResponse } from './HistoryResponse';
-export { default as Payment } from './Payment';
+export { default as PaymentAddress } from './PaymentAddress';
+export { default as HistoryPayment } from './HistoryPayment';

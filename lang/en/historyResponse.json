@@ -3,7 +3,7 @@
     "TITLE": "Response history",
     "CARD": {
       "VALUE": "{{key}}={{value}}",
-      "CREATED_DATE": "Created: {{createdDate}}"
+      "CREATED_DATE": "Created: {{createDate}}"
     }
   }
 }

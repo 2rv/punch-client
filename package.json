@@ -26,7 +26,6 @@
     "qrcode.react": "^1.0.0",
     "react": "16.12.0",
     "react-copy-to-clipboard": "^5.0.2",
-    "react-countdown": "^2.2.1",
     "react-dom": "16.12.0",
     "react-i18next": "^11.2.5",
     "react-inview-monitor": "^2.3.0",

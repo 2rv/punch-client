@@ -4,6 +4,7 @@ const initialState = {
   token: null,
   logged: null,
   user: null,
+  loading: null,
 };
 
 export default (state = initialState, action) => {
@@ -14,6 +15,18 @@ export default (state = initialState, action) => {
         token: action.token,
         user: action.user,
         logged: action.logged,
+      };
+
+    case AUTH.LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case AUTH.LOADED:
+      return {
+        ...state,
+        loading: false,
       };
 
     default:

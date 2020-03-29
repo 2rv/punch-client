@@ -32,6 +32,7 @@ export const AUTH_USER = {
   ID: 'id',
   BALANCE: 'balance',
   ROLE: 'role',
+  BITCOIN_PAYMENT_ADDRESS: 'bitcoinPaymentAddress',
   USERNAME: 'login',
 };
 
@@ -42,4 +43,8 @@ export const CAPTCHA = {
 
 export const PAYMENT_DATA = {
   ID: 'id',
+  TRANSACTION: 'transaction',
+  CREATE_DATE: 'createDate',
+  AMOUNT: 'amount',
+  CONFIRM: 'confirm',
 };

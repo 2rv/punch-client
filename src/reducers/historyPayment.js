@@ -1,30 +1,29 @@
-import { PAYMENT } from '../actions';
+import { HISTORY_PAYMENT } from '../actions';
 import { getReadyState, getLoadingState, getErrorState } from '../utils/store';
-// import { performNewsView } from '../api/newsView';
+import { performPaymentListData } from '../api/payment';
 
 const initialState = {
-  data: {},
+  data: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case PAYMENT.LOADING:
+    case HISTORY_PAYMENT.LOADING:
       return {
         ...state,
-        data: getLoadingState(action.data),
+        data: getLoadingState(action.data, []),
       };
 
-    case PAYMENT.SUCCESS:
+    case HISTORY_PAYMENT.SUCCESS:
       return {
         ...state,
-        // data: getReadyState(performNewsView(action.data)),
-        data: getReadyState(action.data),
+        data: getReadyState(performPaymentListData(action.data)),
       };
 
-    case PAYMENT.FAIL:
+    case HISTORY_PAYMENT.FAIL:
       return {
         ...state,
-        data: getErrorState(action.data),
+        data: getErrorState(action.data, []),
         errorMessage: action.message,
       };
 

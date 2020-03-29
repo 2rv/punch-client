@@ -9,7 +9,8 @@ import login from './login.json';
 import signup from './signup.json';
 import refreshKey from './refreshKey.json';
 import loginUpdate from './loginUpdate.json';
-import history from './history.json';
+import historyResponse from './historyResponse.json';
+import historyPayment from './historyPayment.json';
 import payment from './payment.json';
 
 export default {
@@ -25,7 +26,8 @@ export default {
     SIGNUP: signup,
     REFRESH_KEY: refreshKey,
     LOGIN_UPDATE: loginUpdate,
-    HISTORY: history,
+    HISTORY_RESPONSE: historyResponse,
+    HISTORY_PAYMENT: historyPayment,
     PAYMENT: payment,
   },
 };

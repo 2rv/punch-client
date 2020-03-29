@@ -58,9 +58,9 @@ const Container = styled.div`
 FormTitle.propTypes = {
   className: PropTypes.string,
   sideTid: PropTypes.string,
+  sideAction: PropTypes.func,
   tid: PropTypes.string,
   withoutOffset: PropTypes.bool,
-  sideAction: PropTypes.func,
 };
 
 export default FormTitle;

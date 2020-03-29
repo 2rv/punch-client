@@ -1,0 +1,13 @@
+{
+  "LIST": {
+    "TITLE": "Payment history",
+    "CARD": {
+      "TRANSACTION": "Transaction:",
+      "CREATED_DATE": "Created: {{createDate}}",
+      "AMOUNT": "Amount: {{amount}}$",
+      "CONFIRM_TRUE": "confirmed",
+      "CONFIRM": "Status:",
+      "CONFIRM_FALSE": "pending confirmation"
+    }
+  }
+}

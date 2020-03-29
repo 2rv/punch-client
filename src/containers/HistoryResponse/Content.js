@@ -14,7 +14,7 @@ const Content = ({ data, loading, loaded, error, errorMessage }) => {
     <Fluid>
       <Container>
         <Padding>
-          <ListTitle tid="HISTORY.LIST.TITLE" />
+          <ListTitle tid="HISTORY_RESPONSE.LIST.TITLE" />
           {loading && <SkeletonList />}
           {loading && <Loader />}
 

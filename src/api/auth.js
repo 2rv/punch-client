@@ -5,4 +5,5 @@ export const performUserAuthData = (raw) => ({
   balance: Number(raw[AUTH_USER.BALANCE]),
   role: raw[AUTH_USER.ROLE],
   username: raw[AUTH_USER.USERNAME],
+  bitcoinPaymentAddress: raw[AUTH_USER.BITCOIN_PAYMENT_ADDRESS],
 });

@@ -10,7 +10,7 @@ import refreshKey from './refreshKey';
 import loginUpdate from './loginUpdate';
 import captcha from './captcha';
 import historyResponse from './historyResponse';
-import payment from './payment';
+import historyPayment from './historyPayment';
 
 export default combineReducers({
   form,
@@ -23,5 +23,5 @@ export default combineReducers({
   loginUpdate,
   captcha,
   historyResponse,
-  payment,
+  historyPayment,
 });

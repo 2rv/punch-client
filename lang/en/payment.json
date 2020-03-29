@@ -1,8 +1,8 @@
 {
   "USER_BALANCE": "Your balance: {{balance}}$",
-  "CREATE_PAYMENT": "Replenish balance by Bitcoin",
-  "ORDER_ATTENTION": "Attention! A unique address has been created for payment. Transfer any amount to the specified addres over time. After the time has elapsed, the invoice payment address will be unavailable",
-  "EXPIRATION_END": "The address for sending has expired",
+  "CREATE_ADDRESS": "Get bitcoin address",
+  "CHECK_NEW_TRANSACTION": "Check new transaction",
+  "ADDRESS_PAYMENT_INFO": "This is your unique address for sending transactions on the Bitcoin network. After sending funds to the specified address, click on the button to register a new transaction on our server.",
   "ORDER_DATA": {
     "ADDRESS": "Address",
     "ADDRESS_COPY_ALERT": "Address saved in clipboard",

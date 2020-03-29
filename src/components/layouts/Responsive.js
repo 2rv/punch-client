@@ -2,21 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { sizes } from '../../theme';
-
-const ContentLayout = ({ children, className }) => {
-  return <Content className={className}>{children}</Content>;
+const ContentLayout = ({ children, className, layout = 'medium' }) => {
+  return (
+    <Content layout={layout} className={className}>
+      {children}
+    </Content>
+  );
 };
 
 ContentLayout.propTypes = {
   children: PropTypes.element.isRequired,
   className: PropTypes.string,
+  layout: PropTypes.string,
 };
-
 const Content = styled.div`
   width: 100%;
   margin: 0 auto;
-  max-width: ${sizes.responsiveLayout};
+  ${({ layout }) => {
+    if (layout === 'medium') {
+      return 'max-width: 1200px;';
+    }
+
+    if (layout === 'small') {
+      return 'max-width: 700px;';
+    }
+  }}
 `;
 
 export default ContentLayout;

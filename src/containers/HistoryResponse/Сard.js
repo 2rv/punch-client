@@ -10,7 +10,7 @@ import { Divider, Text } from '../../components';
 const CardList = ({ items }) => {
   return (
     <ResponseGrid>
-      {items.map(({ block, createdDate }, itemIndex) => (
+      {items.map(({ block, createDate }, itemIndex) => (
         <React.Fragment key={`item-${itemIndex}`}>
           <Item>
             {block.map(({ values }, blockIndex) => (
@@ -19,7 +19,7 @@ const CardList = ({ items }) => {
                   {values.map(({ key, value }, valueIndex) => (
                     <React.Fragment key={`value-${valueIndex}`}>
                       <Value>
-                        <Text tid="HISTORY.LIST.CARD.VALUE" values={{ key, value }} />
+                        <Text tid="HISTORY_RESPONSE.LIST.CARD.VALUE" values={{ key, value }} />
                       </Value>
                     </React.Fragment>
                   ))}
@@ -29,7 +29,7 @@ const CardList = ({ items }) => {
             ))}
             <Block>
               <Time>
-                <Text tid="HISTORY.LIST.CARD.CREATED_DATE" values={{ createdDate }} />
+                <Text tid="HISTORY_RESPONSE.LIST.CARD.CREATED_DATE" values={{ createDate }} />
               </Time>
             </Block>
           </Item>

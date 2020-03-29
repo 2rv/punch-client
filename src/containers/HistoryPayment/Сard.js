@@ -73,7 +73,7 @@ const Link = styled(Value)`
   word-break: break-all;
   line-break: strict;
   -webkit-hyphens: auto;
-
+  font-size: 14px;
   cursor: pointer;
   text-decoration: underline;
   transition: opacity ${sizes.transition.md};

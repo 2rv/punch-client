@@ -9,6 +9,7 @@ import { Text } from '../../components';
 import { CopyField } from '../../components/fields';
 
 const OrderData = ({ address }) => {
+  console.log(address);
   return (
     <Container>
       <Block>
@@ -33,6 +34,7 @@ OrderData.propTypes = {
 const Image = styled.div`
   display: flex;
   justify-content: flex-start;
+  border: 5px solid #fff;
 `;
 
 const Block = styled.div`
@@ -40,6 +42,8 @@ const Block = styled.div`
   &:not(:last-of-type) {
     margin-bottom: ${sizes.spacing(2)};
   }
+  display: flex;
+  justify-content: flex-start;
 `;
 
 const BlockAddress = styled(Block)`

@@ -61,9 +61,10 @@ class HistoryPaymentContainer extends React.Component {
   };
 
   updateData = () => {
-    const { dispatch } = this.props;
+    const { dispatch, userBalance } = this.props;
     this.updateInterval();
-    return dispatch(updateHistoryPaymentList());
+    dispatch(updateHistoryPaymentList());
+    dispatch(getUserBalance(userBalance));
   };
 
   render() {

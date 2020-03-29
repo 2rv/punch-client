@@ -10,20 +10,25 @@ const signupFail = (message) => ({
   message,
 });
 
+const signupLoading = () => ({
+  type: SIGNUP.LOADING,
+});
+
 const signupSuccess = (key) => ({
   type: SIGNUP.SUCCESS,
   key,
 });
 
 export const signup = (signupData) => {
-  const payload = convertSignupData(signupData);
-
-  return (dispatch) =>
-    api
+  return (dispatch) => {
+    dispatch(signupLoading);
+    const payload = convertSignupData(signupData);
+    return api
       .post(URLS.SIGNUP, payload)
       .then(({ data }) => {
         redirect(ROUTES.SIGNUP_SUCCESS);
         return dispatch(signupSuccess(data.key));
       })
       .catch(({ response: { data } }) => dispatch(signupFail(data.message)));
+  };
 };

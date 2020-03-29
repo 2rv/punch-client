@@ -26,7 +26,7 @@ const TAB_LIST = [
   { id: 1, tid: 'LOGIN.TAB.LOGIN' },
 ];
 
-const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
+const LoginForm = ({ disabled, loading, error, errorMessage }) => {
   const [activeTab, setActiveTab] = React.useState(0);
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -81,7 +81,7 @@ const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
               <Text tid="LOGIN.FORM.BUTTON_SUBMIT" />
             </ButtonSubmit>
 
-            {submitting && <Loader />}
+            {loading && <Loader />}
           </Block>
           {error && <AlertError tid={`ERROR.${errorMessage}`} />}
         </Padding>
@@ -94,7 +94,7 @@ LoginForm.propTypes = {
   error: PropTypes.bool,
   errorMessage: PropTypes.string,
   disabled: PropTypes.bool,
-  submitting: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
 const TabSection = styled.div`

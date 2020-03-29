@@ -8,5 +8,8 @@
   },
   "SETTINGS": {
     "LOGOUT": "Log out from account"
+  },
+  "INFO": {
+    "BALANCE": "Balance: {{balance}}$"
   }
 }

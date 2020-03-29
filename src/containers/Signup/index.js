@@ -31,12 +31,12 @@ class SignupContainer extends Component {
   };
 
   render() {
-    const { submitting, handleSubmit, errorMessage, statusError } = this.props;
+    const { submitting, loading, handleSubmit, errorMessage, statusError } = this.props;
 
     return (
       <form onSubmit={handleSubmit((form) => this.signup(form))}>
         <SignupForm
-          submitting={submitting}
+          loading={loading || submitting}
           errorMessage={errorMessage}
           error={statusError}
           disabled={this.isFormDisabled()}
@@ -51,10 +51,11 @@ const loginForm = reduxForm({
   validate,
 });
 
-const mapStateToProps = ({ signup: { errorMessage, error }, captcha: { data } }) => ({
+const mapStateToProps = ({ signup: { errorMessage, error, loading }, captcha: { data } }) => ({
   statusError: error,
   errorMessage,
   captcha: getData(data),
+  loading,
 });
 
 SignupContainer.propTypes = {
@@ -66,6 +67,7 @@ SignupContainer.propTypes = {
   valid: PropTypes.bool,
   submitting: PropTypes.bool,
   pristine: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
 export default compose(connect(mapStateToProps), loginForm)(SignupContainer);

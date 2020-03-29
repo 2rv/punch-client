@@ -32,12 +32,12 @@ class LoginContainer extends Component {
   };
 
   render() {
-    const { submitting, handleSubmit, errorMessage, statusError } = this.props;
+    const { submitting, handleSubmit, loading, errorMessage, statusError } = this.props;
 
     return (
       <form onSubmit={handleSubmit((form) => this.login(form))}>
         <LoginForm
-          submitting={submitting}
+          loading={loading || submitting}
           errorMessage={errorMessage}
           error={statusError}
           disabled={this.isFormDisabled()}
@@ -52,9 +52,10 @@ const loginForm = reduxForm({
   validate,
 });
 
-const mapStateToProps = ({ login: { errorMessage, error } }) => ({
+const mapStateToProps = ({ login: { errorMessage, error, loading } }) => ({
   statusError: error,
   errorMessage,
+  loading,
 });
 
 LoginContainer.propTypes = {
@@ -63,6 +64,7 @@ LoginContainer.propTypes = {
   errorMessage: PropTypes.string,
   statusError: PropTypes.bool,
   valid: PropTypes.bool,
+  loading: PropTypes.bool,
   submitting: PropTypes.bool,
   pristine: PropTypes.bool,
 };

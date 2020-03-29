@@ -10,3 +10,4 @@ export { default as Captcha } from './Captcha';
 export { default as HistoryResponse } from './HistoryResponse';
 export { default as PaymentAddress } from './PaymentAddress';
 export { default as HistoryPayment } from './HistoryPayment';
+export { default as IntervalHandler } from './IntervalHandler';

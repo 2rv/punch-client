@@ -14,7 +14,7 @@ import { Captcha } from '../index';
 import { redirect } from '../../utils/navigation';
 import { SIGNUP } from '../../constants/fields';
 
-const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
+const LoginForm = ({ disabled, loading, error, errorMessage }) => {
   return (
     <Fluid>
       <Container>
@@ -39,7 +39,7 @@ const LoginForm = ({ disabled, submitting, error, errorMessage }) => {
               <Text tid="SIGNUP.FORM.BUTTON_SUBMIT" />
             </ButtonSubmit>
 
-            {submitting && <Loader />}
+            {loading && <Loader />}
           </Block>
           {error && <AlertError tid={`ERROR.${errorMessage}`} />}
         </Padding>
@@ -52,7 +52,7 @@ LoginForm.propTypes = {
   error: PropTypes.bool,
   errorMessage: PropTypes.string,
   disabled: PropTypes.bool,
-  submitting: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
 const CaptchaBlock = styled.div`

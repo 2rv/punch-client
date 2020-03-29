@@ -44,6 +44,10 @@ class HistoryPaymentContainer extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.removeInterval();
+  }
+
   updateInterval = () => {
     const { dispatch, userBalance } = this.props;
     const { intervalId } = this.state;
@@ -58,6 +62,11 @@ class HistoryPaymentContainer extends React.Component {
     }, UPDATE_INTERVAL.HISTORY_PAYMENT);
 
     this.setState({ intervalId: newIntervalId });
+  };
+
+  removeInterval = () => {
+    const { intervalId } = this.state;
+    clearInterval(intervalId);
   };
 
   updateData = () => {

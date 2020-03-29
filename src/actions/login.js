@@ -16,16 +16,20 @@ const loginFail = (message) => ({
   message,
 });
 
+const loginLoading = () => ({
+  type: LOGIN.LOADING,
+});
+
 const loginSuccess = (token) => ({
   type: LOGIN.SUCCESS,
   token,
 });
 
 export const login = (actionData) => {
-  const payload = convertLoginData(actionData);
-
-  return (dispatch) =>
-    api
+  return (dispatch) => {
+    dispatch(loginLoading());
+    const payload = convertLoginData(actionData);
+    return api
       .post(URLS.LOGIN, payload)
       .then(({ data }) => {
         setAutorization(data.accessToken);
@@ -34,4 +38,5 @@ export const login = (actionData) => {
         return dispatch(loginSuccess(data.accessToken));
       })
       .catch(({ response: { data } }) => dispatch(loginFail(data.message)));
+  };
 };

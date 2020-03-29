@@ -9,7 +9,6 @@ import { Text } from '../../components';
 import { CopyField } from '../../components/fields';
 
 const OrderData = ({ address }) => {
-  console.log(address);
   return (
     <Container>
       <Block>

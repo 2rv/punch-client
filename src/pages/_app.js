@@ -13,6 +13,7 @@ import { getCookie } from '../utils/cookie';
 import { COOKIE_AUTH } from '../constants';
 import routing from '../routes';
 import { setAuthData } from '../actions/auth';
+import { IntervalHandler } from '../containers';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -56,6 +57,7 @@ class MyApp extends App {
         <ThemeProvider theme={themeLanding}>
           <CssBaseline />
           <Component {...pageProps} />
+          <IntervalHandler />
         </ThemeProvider>
       </ReduxProvider>
     );

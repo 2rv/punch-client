@@ -12,9 +12,9 @@ import { sendUserRequest } from '../../actions/userRequest';
 import FormComponent from './Form';
 
 class UserRequestContainer extends Component {
-  send = (form) => {
+  send = () => {
     const { dispatch } = this.props;
-    console.log(form);
+
     return dispatch(sendUserRequest());
   };
 

@@ -17,23 +17,24 @@ export const setAuthData = (token) => {
     });
 };
 
+const setLoaded = () => ({
+  type: AUTH.LOADED,
+});
+
 export const refreshToken = () => {
   return (dispatch) =>
     api
       .get(URLS.REFRESH_TOKEN)
       .then(({ data }) => {
         setAutorization(data.accessToken);
-        return dispatch(setAuthData(data.accessToken));
+        dispatch(setAuthData(data.accessToken));
+        return dispatch(setLoaded());
       })
       .catch(() => logOut());
 };
 
 const setLoading = () => ({
   type: AUTH.LOADING,
-});
-
-const setLoaded = () => ({
-  type: AUTH.LOADED,
 });
 
 export const createPaymentBitcoinAddress = () => (dispatch) => {
@@ -43,7 +44,6 @@ export const createPaymentBitcoinAddress = () => (dispatch) => {
     .get(URLS.PAYMENT_CREATE_BITCOIN_ADDRESS)
     .then(() => {
       dispatch(refreshToken());
-      dispatch(setLoaded());
     })
     .catch(() => logOut());
 };

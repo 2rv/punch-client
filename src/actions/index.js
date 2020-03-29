@@ -46,11 +46,13 @@ export const LOGIN_UPDATE = {
 
 export const LOGIN = {
   SUCCESS: 'LOGIN.SUCCESS',
+  LOADING: 'LOGIN.LOADING',
   FAIL: 'LOGIN.FAIL',
 };
 
 export const SIGNUP = {
   SUCCESS: 'SIGNUP.SUCCESS',
+  LOADING: 'SIGNUP.LOADING',
   FAIL: 'SIGNUP.FAIL',
 };
 
